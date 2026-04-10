@@ -11,77 +11,62 @@ body { font-family:'Inter',sans-serif; color:#2D2A26; line-height:1.6; }
 .page { max-width:960px; margin:0 auto; padding:60px 40px; }
 .page-warm { background:#F5F2EF; }
 .page-white { background:#FFFFFF; }
-
-/* Hero */
 .hero { background: linear-gradient(145deg, #2D2A26 0%, #433F3A 55%, #3A3632 100%); color:white; padding:80px 40px; text-align:center; position:relative; overflow:hidden; }
 .hero::before { content:''; position:absolute; width:600px; height:600px; background:radial-gradient(circle, rgba(255,131,112,0.15) 0%, transparent 70%); top:-200px; right:-100px; }
 .hero::after { content:''; position:absolute; width:400px; height:400px; background:radial-gradient(circle, rgba(224,122,95,0.1) 0%, transparent 70%); bottom:-150px; left:-50px; }
 .hero h1 { font-family:'Lora',serif; font-size:2.8em; font-weight:700; margin-bottom:16px; position:relative; z-index:1; }
 .hero .subtitle { font-size:1.15em; color:rgba(255,255,255,0.7); max-width:600px; margin:0 auto; position:relative; z-index:1; }
-
-/* Section headers */
 h2 { font-family:'Lora',serif; font-size:1.8em; font-weight:700; margin-bottom:8px; }
 h3 { font-family:'Lora',serif; font-size:1.3em; font-weight:600; margin-bottom:6px; }
 .section-sub { color:#6B6560; font-size:0.95em; margin-bottom:32px; }
-
-/* Stat cards */
-.stat-row { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:16px; margin:32px 0; }
-.stat-card { background:#F5F2EF; border-radius:12px; padding:20px; text-align:center; }
-.stat-num { font-family:'Lora',serif; font-size:2.2em; font-weight:700; color:#E07A5F; }
-.stat-label { color:#6B6560; font-size:0.82em; margin-top:4px; }
-
-/* Upgrade path */
 .path { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:0; margin:32px 0; }
-.path-step { padding:24px 20px; border-right:1px solid rgba(0,0,0,0.06); position:relative; }
+.path-step { padding:24px 20px; border-right:1px solid rgba(0,0,0,0.06); }
 .path-step:last-child { border-right:none; }
-.path-step .step-badge { display:inline-block; font-size:0.7em; font-weight:700; text-transform:uppercase; letter-spacing:1px; padding:3px 10px; border-radius:20px; margin-bottom:10px; }
+.step-badge { display:inline-block; font-size:0.7em; font-weight:700; text-transform:uppercase; letter-spacing:1px; padding:3px 10px; border-radius:20px; margin-bottom:10px; }
 .badge-free { background:#E8F5E9; color:#2E7D32; }
 .badge-solo { background:#E3F2FD; color:#1565C0; }
 .badge-branch { background:#FFF3E0; color:#E65100; }
 .badge-enterprise { background:#F3E5F5; color:#6A1B9A; }
 .path-step h4 { font-family:'Lora',serif; font-size:1.05em; margin-bottom:6px; }
 .path-step p { font-size:0.82em; color:#6B6560; line-height:1.5; }
-
-/* Overview table */
 table { width:100%; border-collapse:collapse; font-size:0.82em; margin:24px 0; }
 th { background:#2D2A26; color:white; padding:12px 14px; text-align:left; font-weight:600; font-size:0.78em; text-transform:uppercase; letter-spacing:0.5px; }
 td { padding:11px 14px; border-bottom:1px solid #E8E4E0; vertical-align:top; }
 tr:hover td { background:#FBF9F7; }
 .user-name { font-weight:600; }
 .company { color:#6B6560; font-size:0.9em; }
-
-/* Deep dive cards */
 .dive-card { background:white; border-radius:16px; padding:36px; margin:32px 0; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
 .dive-header { display:flex; align-items:center; gap:20px; margin-bottom:24px; padding-bottom:20px; border-bottom:1px solid #E8E4E0; }
 .dive-avatar { width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Lora',serif; font-weight:700; font-size:1.3em; color:white; flex-shrink:0; }
 .dive-meta { font-size:0.82em; color:#6B6560; margin-top:2px; }
-
-/* Step rows inside deep dive */
-.step-row { margin:20px 0; padding:20px; border-radius:12px; }
+.step-row { margin:24px 0; padding:24px; border-radius:12px; }
 .step-free { background:#F1F8F1; border-left:4px solid #2E7D32; }
 .step-solo { background:#EBF4FB; border-left:4px solid #1565C0; }
 .step-branch { background:#FFF8F0; border-left:4px solid #E65100; }
 .step-enterprise { background:#F8F0FA; border-left:4px solid #6A1B9A; }
-.step-row .step-title { font-weight:700; font-size:0.78em; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:8px; }
+.step-row .step-title { font-weight:700; font-size:0.78em; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:12px; }
 .step-free .step-title { color:#2E7D32; }
 .step-solo .step-title { color:#1565C0; }
 .step-branch .step-title { color:#E65100; }
 .step-enterprise .step-title { color:#6A1B9A; }
-.step-row .msg { font-size:0.9em; line-height:1.6; }
 .step-row .uplift { font-family:'Lora',serif; font-weight:700; font-size:1.1em; margin-top:8px; }
 .step-free .uplift { color:#2E7D32; }
 .step-solo .uplift { color:#1565C0; }
 .step-branch .uplift { color:#E65100; }
 .step-enterprise .uplift { color:#6A1B9A; }
-
-/* Alert example */
-.alert-box { background:#F5F2EF; border-radius:10px; padding:16px 20px; margin-top:12px; font-size:0.85em; font-style:italic; color:#6B6560; border-left:3px solid #E07A5F; }
-
-/* Arrow connector */
+.alert-box { background:rgba(224,122,95,0.08); border-radius:10px; padding:16px 20px; margin-top:14px; font-size:0.85em; font-style:italic; color:#6B6560; border-left:3px solid #E07A5F; }
 .arrow-row { text-align:center; padding:8px 0; color:#9E9893; font-size:1.5em; }
-
+/* Diagnosis */
+.diag-label { font-weight:600; font-size:0.75em; text-transform:uppercase; letter-spacing:0.8px; color:#9E9893; margin-bottom:8px; }
+.diag-table { width:100%; border-collapse:collapse; font-size:0.85em; margin:0 0 16px 0; }
+.diag-table td { padding:6px 10px; border-bottom:1px solid rgba(0,0,0,0.06); vertical-align:top; }
+.diag-table tr:last-child td { border-bottom:none; }
+.diag-table .check { width:28px; text-align:center; font-size:1.1em; }
+.diag-table .val { text-align:right; font-family:'Lora',serif; font-weight:600; font-size:0.9em; white-space:nowrap; }
+.approach-label { font-weight:600; font-size:0.75em; text-transform:uppercase; letter-spacing:0.8px; color:#9E9893; margin:16px 0 8px 0; }
+.comms-label { font-weight:600; font-size:0.75em; text-transform:uppercase; letter-spacing:0.8px; color:#9E9893; margin:16px 0 8px 0; }
+.approach-text { font-size:0.9em; line-height:1.6; }
 @media (max-width:800px) {
-  .stat-row { grid-template-columns:1fr 1fr; }
   .path { grid-template-columns:1fr; }
   .path-step { border-right:none; border-bottom:1px solid rgba(0,0,0,0.06); }
 }
@@ -90,293 +75,396 @@ tr:hover td { background:#FBF9F7; }
 </head>
 <body>
 
-<!-- ==================== HERO ==================== -->
+<!-- HERO -->
 <div class="hero">
   <h1>Proactive White Glove Support</h1>
   <div class="subtitle">A seller playbook to diagnose, fix, and expand qualified sales leads through free and paid YouSquared activations</div>
 </div>
 
-<!-- ==================== THE 4-STEP PATH ==================== -->
+<!-- 4-STEP PATH -->
 <div class="page page-white">
   <h2>The 4-Step Upgrade Path</h2>
   <p class="section-sub">Each step builds on the last. Start with free value, earn trust, expand.</p>
-
   <div class="path">
     <div class="path-step">
       <span class="step-badge badge-free">Free Fixes</span>
       <h4>Scenarios, FAQ & Texts</h4>
       <p>Fix how their AI handles different caller types. Add text follow-ups. Immediate value, zero cost.</p>
-      <div style="font-family:'Lora',serif; font-weight:700; color:#2E7D32; margin-top:12px;">&lt;$140K/yr</div>
     </div>
     <div class="path-step">
       <span class="step-badge badge-solo">Solo Upgrades</span>
       <h4>Pro or Elite Plan</h4>
       <p>Unlock call volume, calendar booking, and outbound follow-up for the individual user.</p>
-      <div style="font-family:'Lora',serif; font-weight:700; color:#1565C0; margin-top:12px;">&lt;$140K/yr</div>
     </div>
     <div class="path-step">
       <span class="step-badge badge-branch">Branch Upgrade</span>
       <h4>Team: 1 Branch</h4>
       <p>Cover the branch line + individual rep lines. Transfer, shared inbox. 24/7 instant service.</p>
-      <div style="font-family:'Lora',serif; font-weight:700; color:#E65100; margin-top:12px;">~$2.5M/yr</div>
     </div>
     <div class="path-step">
       <span class="step-badge badge-enterprise">Enterprise</span>
       <h4>All Branches + Integration</h4>
       <p>Every individual, branch & national line. System integration for real answers. Full AI coverage.</p>
-      <div style="font-family:'Lora',serif; font-weight:700; color:#6A1B9A; margin-top:12px;">~$50M/yr</div>
     </div>
   </div>
 </div>
 
-<!-- ==================== USER OVERVIEW ==================== -->
+<!-- USER OVERVIEW -->
 <div class="page page-warm">
   <h2>User Overview</h2>
   <p class="section-sub">Target sales leads ranked by total opportunity. Deep dives below for Tanner, Mitri, and Stayci.</p>
-
   <table>
-    <tr>
-      <th>User</th>
-      <th>Company</th>
-      <th>Free Fixes</th>
-      <th>Solo Upgrades</th>
-      <th>Branch Upgrade</th>
-      <th>Enterprise Upgrade</th>
-      <th>Alert Freq</th>
-    </tr>
-    <tr>
-      <td class="user-name">Mitri S.</td>
-      <td class="company">Shunnarah</td>
-      <td>Scenarios/FAQ, texts (&lt;$140K/yr)</td>
-      <td>Outbound (&lt;$140K/yr)</td>
-      <td>Birmingham + 12 lines, 77hr avg read (~$2.5M/yr)</td>
-      <td>25 offices + 1-800 line + case mgmt integration (~$50M/yr)</td>
-      <td><strong>Weekly</strong></td>
-    </tr>
-    <tr>
-      <td class="user-name">Mark G.</td>
-      <td class="company">Compass</td>
-      <td>Scenarios/FAQ, texts (&lt;$100K/yr)</td>
-      <td>Outbound (&lt;$100K/yr)</td>
-      <td>TBD</td>
-      <td>TBD</td>
-      <td><strong>Weekly</strong></td>
-    </tr>
-    <tr>
-      <td class="user-name">Galen H.</td>
-      <td class="company">Hair Shunnarah</td>
-      <td>Scenarios/FAQ, texts (&lt;$60K/yr)</td>
-      <td>Outbound (&lt;$60K/yr)</td>
-      <td>TBD</td>
-      <td>TBD</td>
-      <td><strong>Weekly</strong></td>
-    </tr>
-    <tr>
-      <td class="user-name">Ginger O.</td>
-      <td class="company">Compass</td>
-      <td>Scenarios/FAQ, texts (&lt;$40K/yr)</td>
-      <td>Outbound (&lt;$40K/yr)</td>
-      <td>TBD</td>
-      <td>TBD</td>
-      <td><strong>Weekly</strong></td>
-    </tr>
-    <tr>
-      <td class="user-name">Yaakov M.</td>
-      <td class="company">Safer Health</td>
-      <td>Scenarios/FAQ, texts (&lt;$50K/yr)</td>
-      <td>Outbound (&lt;$50K/yr)</td>
-      <td>Pharmacy + 4 lines, 15hr avg read (~$1.5M/yr)</td>
-      <td>TBD</td>
-      <td><strong>Weekly</strong></td>
-    </tr>
-    <tr>
-      <td class="user-name">Tanner P.</td>
-      <td class="company">Blue Tank</td>
-      <td>Scenarios/FAQ, texts (&lt;$40K/yr)</td>
-      <td>Elite for volume (&lt;$25K/yr)</td>
-      <td>Nicholasville + 4 lines, 10hr avg read (~$1.5M/yr)</td>
-      <td>8 branches + main + inventory integration (~$10M/yr)</td>
-      <td>Biweekly</td>
-    </tr>
-    <tr>
-      <td class="user-name">Stayci R.</td>
-      <td class="company">Centex</td>
-      <td>Scenario gaps, texts (&lt;$35K/yr)</td>
-      <td>Pro: volume + calendar (&lt;$120K/yr)</td>
-      <td>Dallas + 8 lines, 40hr avg read (~$1.5M/yr)</td>
-      <td>10 regionals + toll-free + project integration (~$10M/yr)</td>
-      <td>Monthly</td>
-    </tr>
-    <tr style="color:#9E9893;">
-      <td>Deb C.</td><td class="company">Home Depot</td><td colspan="4" style="text-align:center;">TBD</td><td>Biweekly</td>
-    </tr>
-    <tr style="color:#9E9893;">
-      <td>Drew H.</td><td class="company">Bish's RV</td><td colspan="4" style="text-align:center;">TBD</td><td>Monthly</td>
-    </tr>
-    <tr style="color:#9E9893;">
-      <td>Inspector J.</td><td class="company">Terminix</td><td colspan="4" style="text-align:center;">TBD</td><td>Biweekly</td>
-    </tr>
-    <tr style="color:#9E9893;">
-      <td>Robert W.</td><td class="company">Centex</td><td colspan="4" style="text-align:center;">TBD</td><td>Monthly</td>
-    </tr>
+    <tr><th>User</th><th>Company</th><th>Free Fixes</th><th>Solo Upgrades</th><th>Branch Upgrade</th><th>Enterprise Upgrade</th><th>Alert Freq</th></tr>
+    <tr><td class="user-name">Mitri S.</td><td class="company">Shunnarah</td><td>Scenarios/FAQ, texts (&lt;$140K/yr)</td><td>Outbound (&lt;$140K/yr)</td><td>Birmingham + 12 lines, 77hr avg read (~$2.5M/yr)</td><td>25 offices + 1-800 line + case mgmt integration (~$50M/yr)</td><td><strong>Weekly</strong></td></tr>
+    <tr><td class="user-name">Mark G.</td><td class="company">Compass</td><td>Scenarios/FAQ, texts (&lt;$100K/yr)</td><td>Outbound (&lt;$100K/yr)</td><td>TBD</td><td>TBD</td><td><strong>Weekly</strong></td></tr>
+    <tr><td class="user-name">Galen H.</td><td class="company">Hair Shunnarah</td><td>Scenarios/FAQ, texts (&lt;$60K/yr)</td><td>Outbound (&lt;$60K/yr)</td><td>TBD</td><td>TBD</td><td><strong>Weekly</strong></td></tr>
+    <tr><td class="user-name">Ginger O.</td><td class="company">Compass</td><td>Scenarios/FAQ, texts (&lt;$40K/yr)</td><td>Outbound (&lt;$40K/yr)</td><td>TBD</td><td>TBD</td><td><strong>Weekly</strong></td></tr>
+    <tr><td class="user-name">Yaakov M.</td><td class="company">Safer Health</td><td>Scenarios/FAQ, texts (&lt;$50K/yr)</td><td>Outbound (&lt;$50K/yr)</td><td>Pharmacy + 4 lines, 15hr avg read (~$1.5M/yr)</td><td>TBD</td><td><strong>Weekly</strong></td></tr>
+    <tr><td class="user-name">Tanner P.</td><td class="company">Blue Tank</td><td>Scenarios/FAQ, texts (&lt;$40K/yr)</td><td>Elite for volume (&lt;$25K/yr)</td><td>Nicholasville + 4 lines, 10hr avg read (~$1.5M/yr)</td><td>8 branches + main + inventory integration (~$10M/yr)</td><td>Biweekly</td></tr>
+    <tr><td class="user-name">Stayci R.</td><td class="company">Centex</td><td>Scenario gaps, texts (&lt;$35K/yr)</td><td>Pro: volume + calendar (&lt;$120K/yr)</td><td>Dallas + 8 lines, 40hr avg read (~$1.5M/yr)</td><td>10 regionals + toll-free + project integration (~$10M/yr)</td><td>Monthly</td></tr>
+    <tr style="color:#9E9893;"><td>Deb C.</td><td class="company">Home Depot</td><td colspan="4" style="text-align:center;">TBD</td><td>Biweekly</td></tr>
+    <tr style="color:#9E9893;"><td>Drew H.</td><td class="company">Bish's RV</td><td colspan="4" style="text-align:center;">TBD</td><td>Monthly</td></tr>
+    <tr style="color:#9E9893;"><td>Inspector J.</td><td class="company">Terminix</td><td colspan="4" style="text-align:center;">TBD</td><td>Biweekly</td></tr>
+    <tr style="color:#9E9893;"><td>Robert W.</td><td class="company">Centex</td><td colspan="4" style="text-align:center;">TBD</td><td>Monthly</td></tr>
   </table>
 </div>
 
-<!-- ==================== DEEP DIVE: TANNER ==================== -->
+<!-- ==================== TANNER ==================== -->
 <div class="page page-white">
   <h2>Deep Dive: Tanner Perdue</h2>
   <p class="section-sub">Blue Tank and Pump &mdash; Pro Plan</p>
 
   <div class="dive-card">
-    <div class="dive-header">
-      <div class="dive-avatar" style="background:#E07A5F;">TP</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px; padding-bottom:20px; border-bottom:1px solid #E8E4E0;">
       <div>
-        <h3 style="margin:0;">Tanner Perdue, President</h3>
-        <div class="dive-meta">8 branches (KY/TN/IN/OH) &middot; ~60 employees &middot; 32 revenue-stakes lines &middot; AI "Amanda" &middot; 102 calls/mo &middot; 34% cvo rate &middot; 9 VIPs</div>
+        <div class="diag-label" style="margin-bottom:6px;">Account Potential</div>
+        <h3 style="margin:0;">Blue Tank and Pump</h3>
+        <div class="dive-meta">8 branches (KY/TN/IN/OH) &middot; ~60 employees &middot; 32 revenue-stakes phone lines &middot; Main line: (859) 940-9003</div>
+      </div>
+      <div>
+        <div class="diag-label" style="margin-bottom:6px;">User Overview</div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div class="dive-avatar" style="background:#E07A5F; width:44px; height:44px; font-size:1em;">TP</div>
+          <div>
+            <div style="font-weight:600;">Tanner Perdue, President</div>
+            <div class="dive-meta">Pro plan &middot; AI "Amanda" &middot; 102 calls/mo &middot; 34% cvo &middot; 9 VIPs</div>
+          </div>
+        </div>
       </div>
     </div>
 
+    <!-- FREE FIXES -->
     <div class="step-row step-free">
       <div class="step-title">Free Fixes</div>
-      <div class="msg">Let's fix your scenarios and FAQ so Amanda can qualify equipment prospects on type, size, timeline & location and text them a quote follow-up so they don't call a competitor while waiting. E.g. add caller scenario: "If caller asks about equipment" &rarr; "Ask what type, size, when needed, delivery or pickup."</div>
+
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check">&#10003;</td><td>VIP contacts: 9 tagged (threshold: 2+)</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check">&#10003;</td><td>Cvo rate: 34% (threshold: 30%+)</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Caller scenarios: none defined &mdash; prospects, clients, partners all get same generic handling</td><td class="val" style="color:#2E7D32;">&lt;$24K/yr</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Text follow-ups: none configured &mdash; client got lost finding location, no quote follow-ups sent</td><td class="val" style="color:#2E7D32;">&lt;$18K/yr</td></tr>
+      </table>
+
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Let's fix your scenarios and FAQ so Amanda can qualify equipment prospects on type, size, timeline & location and text them a quote follow-up so they don't call a competitor while waiting. E.g. add caller scenario: "If caller asks about equipment" &rarr; "Ask what type, size, when needed, delivery or pickup."</div>
       <div class="uplift">&lt;$40K/yr uplift</div>
+
+      <div class="comms-label">Example outreach</div>
       <div class="alert-box">Hey Tanner, our system flagged a call on Tuesday at 11:44am where Amanda applied generic handling to a caller that likely needed a more specific approach &mdash; looks like an equipment inquiry that could've been qualified on type, size and timeline. Do you have 15 minutes to hop on a call to correct this together?</div>
     </div>
 
     <div class="arrow-row">&darr;</div>
 
+    <!-- SOLO -->
     <div class="step-row step-solo">
       <div class="step-title">Solo Upgrade &mdash; Elite</div>
-      <div class="msg">Let's upgrade you to Elite so Amanda can handle unlimited calls (you hit 88/90 last cycle) and follow up outbound on quotes and site visits.</div>
+
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Call volume: 88/90 prev completed cycle (98%) &mdash; one call from cap</td><td class="val" style="color:#1565C0;">&lt;$12K/yr</td></tr>
+        <tr><td class="check">&#10003;</td><td>Calendar/Outbound: available on Pro</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#E65100;">&#9888;</td><td>Outbound not yet activated &mdash; Amanda can't follow up on quotes or schedule site visits</td><td class="val" style="color:#1565C0;">&lt;$12K/yr</td></tr>
+      </table>
+
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Let's upgrade you to Elite so Amanda can handle unlimited calls (you hit 88/90 last cycle) and follow up outbound on quotes and site visits.</div>
       <div class="uplift">&lt;$25K/yr uplift</div>
+
+      <div class="comms-label">Example outreach</div>
       <div class="alert-box">Hey Tanner, Amanda hit 88 out of 90 calls last cycle &mdash; meaning some callers aren't getting AI coverage. Upgrading to Elite removes that cap and adds outbound so Amanda can follow up on open quotes. Want to take 5 minutes to get that sorted?</div>
     </div>
 
     <div class="arrow-row">&darr;</div>
 
+    <!-- BRANCH -->
     <div class="step-row step-branch">
       <div class="step-title">Branch Upgrade &mdash; Nicholasville</div>
-      <div class="msg">Help me get your Nicholasville branch on YouSquared so every equipment inquiry and client callback to (859) 940-9003 or your 4 reps' direct lines is serviced instantly 24/7 by AI, and whenever necessary transferred to the right rep &mdash; across 80 calls/day on those lines.</div>
+
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Call transfer: not configured &mdash; urgent equipment calls go to message-taking</td><td class="val" style="color:#E65100;">&lt;$20K/yr</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Avg time-to-read on revenue-stakes calls: 10 hours</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Branch line (859) 940-9003: not on YouSquared</td><td class="val" style="color:#E65100;">~$1M/yr</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>4 revenue-stakes individual lines (branch mgr, 2 PMs, counter mgr): not on YouSquared</td><td class="val" style="color:#E65100;">~$500K/yr</td></tr>
+      </table>
+
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Help me get your Nicholasville branch on YouSquared so every equipment inquiry and client callback to (859) 940-9003 or your 4 reps' direct lines is serviced instantly 24/7 by AI, and whenever necessary transferred to the right rep &mdash; across 80 calls/day on those lines.</div>
       <div class="uplift">approx $1.5M/yr uplift</div>
+
+      <div class="comms-label">Example outreach</div>
       <div class="alert-box">Hey Tanner, our system flagged a call on Monday at 3:24pm with potential revenue at stake &mdash; it took about 10 hours before it was reviewed. With your Nicholasville branch line and reps on YouSquared, a team member could've picked that up live. Do you have 5 minutes to discuss whether this is something you'd like us to trial for you?</div>
     </div>
 
     <div class="arrow-row">&darr;</div>
 
+    <!-- ENTERPRISE -->
     <div class="step-row step-enterprise">
       <div class="step-title">Enterprise</div>
-      <div class="msg">The day we get all 8 branches + main line on our AI integrated with your inventory, quoting & order systems &mdash; every equipment inquiry, every client callback, every emergency across all 32 individual, 8 branch and national lines gets accurate answers and instant routing 24/7 &mdash; across 1,200 calls/day.</div>
+
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>7 additional branches not covered (Louisville, Louisa, Lenoir City, Nashville, Columbus, Monroe, Indianapolis)</td><td class="val" style="color:#6A1B9A;">~$7M/yr</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Main national line: not on YouSquared</td><td class="val" style="color:#6A1B9A;">~$1M/yr</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>System integration: 0 of 1,772 contacts enriched &mdash; AI can't quote equipment or pull order history</td><td class="val" style="color:#6A1B9A;">~$500K/yr</td></tr>
+      </table>
+
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">The day we get all 8 branches + main line on our AI integrated with your inventory, quoting & order systems &mdash; every equipment inquiry, every client callback, every emergency across all 32 individual, 8 branch and national lines gets accurate answers and instant routing 24/7 &mdash; across 1,200 calls/day.</div>
       <div class="uplift">approx $10M/yr uplift</div>
+
+      <div class="comms-label">Example pitch</div>
       <div class="alert-box">Tanner, right now Amanda handles your personal line great. Imagine that same quality across all 8 branches &mdash; Nicholasville, Louisville, Nashville, Columbus, all of them &mdash; where any caller asking about lay flat hose or a pump rental gets an accurate quote from AI that knows your inventory, and urgent calls get transferred to the nearest available rep. That's 1,200 calls a day handled 24/7.</div>
     </div>
   </div>
 </div>
 
-<!-- ==================== DEEP DIVE: MITRI ==================== -->
+<!-- ==================== MITRI ==================== -->
 <div class="page page-warm">
   <h2>Deep Dive: Mitri Shatara</h2>
   <p class="section-sub">Alexander Shunnarah Trial Attorneys &mdash; Elite Plan</p>
 
   <div class="dive-card">
-    <div class="dive-header">
-      <div class="dive-avatar" style="background:#6A1B9A;">MS</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px; padding-bottom:20px; border-bottom:1px solid #E8E4E0;">
       <div>
-        <h3 style="margin:0;">Mitri Shatara, Attorney & EVP</h3>
-        <div class="dive-meta">25 offices across 20+ states &middot; 500+ employees &middot; 300 revenue-stakes lines &middot; AI "John" &middot; 141 calls/mo &middot; 40% cvo rate &middot; 49 VIPs &middot; 92% of urgent calls unread</div>
+        <div class="diag-label" style="margin-bottom:6px;">Account Potential</div>
+        <h3 style="margin:0;">Alexander Shunnarah Trial Attorneys</h3>
+        <div class="dive-meta">25 offices across 20+ states &middot; 500+ employees &middot; 300 revenue-stakes phone lines &middot; Main line: 1-800-229-7989</div>
+      </div>
+      <div>
+        <div class="diag-label" style="margin-bottom:6px;">User Overview</div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div class="dive-avatar" style="background:#6A1B9A; width:44px; height:44px; font-size:1em;">MS</div>
+          <div>
+            <div style="font-weight:600;">Mitri Shatara, Attorney & EVP</div>
+            <div class="dive-meta">Elite plan &middot; AI "John" &middot; 141 calls/mo &middot; 40% cvo &middot; 49 VIPs &middot; 92% urgent unread</div>
+          </div>
+        </div>
       </div>
     </div>
 
+    <!-- FREE FIXES -->
     <div class="step-row step-free">
       <div class="step-title">Free Fixes</div>
-      <div class="msg">Let's fix your scenarios and FAQ so John can handle case updates, new PI intake, and insurer counter-offers each with the right approach and confirm next steps via text so clients stop chasing. E.g. add caller scenario: "If existing client asking for case update" &rarr; "Ask for case manager name, confirm callback number, let them know their attorney will follow up by end of day."</div>
+
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check">&#10003;</td><td>VIP contacts: 49 tagged</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#E65100;">&#9888;</td><td>Cvo rate: 40% (above threshold but greeting is 15 words &mdash; could trim)</td><td class="val" style="color:#2E7D32;">&lt;$24K/yr</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Caller scenarios: none defined &mdash; case update clients, new PI leads, insurer counter-offers, co-counsel all get generic handling</td><td class="val" style="color:#2E7D32;">&lt;$96K/yr</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>FAQ: empty &mdash; no practice areas, no office address, no main line info</td><td class="val" style="color:#2E7D32;">&lt;$12K/yr</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Text follow-ups: none &mdash; partner specifically asked "text if you miss me", client given wrong address</td><td class="val" style="color:#2E7D32;">&lt;$24K/yr</td></tr>
+      </table>
+
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Let's fix your scenarios and FAQ so John can handle case updates, new PI intake, and insurer counter-offers each with the right approach and confirm next steps via text so clients stop chasing. E.g. add caller scenario: "If existing client asking for case update" &rarr; "Ask for case manager name, confirm callback number, let them know their attorney will follow up by end of day."</div>
       <div class="uplift">&lt;$140K/yr uplift</div>
+
+      <div class="comms-label">Example outreach</div>
       <div class="alert-box">Hey Mitri, our system flagged a call on Thursday at 1:32pm where John applied generic handling to a caller that likely needed a more specific approach &mdash; looks like a client needing a case update got the same treatment as a new caller. Do you have 15 minutes to hop on a call to correct this together?</div>
     </div>
 
     <div class="arrow-row">&darr;</div>
 
+    <!-- SOLO -->
     <div class="step-row step-solo">
       <div class="step-title">Solo Upgrade &mdash; Outbound</div>
-      <div class="msg">Let's activate outbound so John can follow up with clients waiting on case updates and re-engage leads who called but didn't retain.</div>
+
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check">&#10003;</td><td>Call volume: 246/1,000 prev cycle (25%) &mdash; well within limit</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check">&#10003;</td><td>Plan: Elite &mdash; all features available</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Outbound not activated &mdash; clients calling back 2-3 times for updates, John could proactively follow up</td><td class="val" style="color:#1565C0;">&lt;$140K/yr</td></tr>
+      </table>
+
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Let's activate outbound so John can follow up with clients waiting on case updates and re-engage leads who called but didn't retain.</div>
       <div class="uplift">&lt;$140K/yr uplift</div>
+
+      <div class="comms-label">Example outreach</div>
       <div class="alert-box">Hey Mitri, our system flagged 3 calls this past week from clients who called back multiple times looking for updates. With outbound, John can proactively follow up so they don't have to keep calling. Want to take 5 minutes to activate it?</div>
     </div>
 
     <div class="arrow-row">&darr;</div>
 
+    <!-- BRANCH -->
     <div class="step-row step-branch">
       <div class="step-title">Branch Upgrade &mdash; Birmingham</div>
-      <div class="msg">Help me get your Birmingham office on YouSquared so every client case call and insurer counter-offer to (205) 323-1000 or your 12 attorneys' and case managers' direct lines is serviced instantly 24/7 by AI, and whenever necessary transferred to the right attorney or paralegal &mdash; across 150 calls/day on those lines.</div>
+
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Call transfer: not configured &mdash; settlement counter-offers and distressed clients go to message-taking</td><td class="val" style="color:#E65100;">&lt;$336K/yr</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Avg time-to-read on revenue-stakes calls: 77 hours (3+ days). 92% still unread.</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Birmingham office line (205) 323-1000: not on YouSquared</td><td class="val" style="color:#E65100;">~$1.5M/yr</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>12 revenue-stakes individual lines (5 attorneys, 4 case managers, 3 paralegals): not on YouSquared</td><td class="val" style="color:#E65100;">~$700K/yr</td></tr>
+      </table>
+
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Help me get your Birmingham office on YouSquared so every client case call and insurer counter-offer to (205) 323-1000 or your 12 attorneys' and case managers' direct lines is serviced instantly 24/7 by AI, and whenever necessary transferred to the right attorney or paralegal &mdash; across 150 calls/day on those lines.</div>
       <div class="uplift">approx $2.5M/yr uplift</div>
+
+      <div class="comms-label">Example outreach</div>
       <div class="alert-box">Hey Mitri, our system flagged 12 calls over the past few weeks with potential revenue or retention at stake. On average it's taking about 3 days before these get reviewed &mdash; and most are still unread. With your Birmingham office on YouSquared, a paralegal or case manager could've triaged these within minutes. Do you have 5 minutes to discuss whether this is something you'd like us to trial for you?</div>
     </div>
 
     <div class="arrow-row">&darr;</div>
 
+    <!-- ENTERPRISE -->
     <div class="step-row step-enterprise">
       <div class="step-title">Enterprise</div>
-      <div class="msg">The day we get all 25 offices + 1-800-229-7989 billboard line on our AI integrated with your case management system &mdash; every case update, every new PI intake, every insurer counter-offer across all 300 individual, 25 office and national lines gets real answers and instant routing 24/7 &mdash; across 6,000 calls/day.</div>
+
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>24 additional offices not covered (Atlanta, Nashville, Jacksonville, Dallas, Phoenix, Chicago, Orlando&hellip;)</td><td class="val" style="color:#6A1B9A;">~$36M/yr</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Main 1-800-229-7989 billboard intake line: not on YouSquared (~300+ calls/day)</td><td class="val" style="color:#6A1B9A;">~$10M/yr</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>System integration: 0 of 3,783 contacts enriched &mdash; AI can't reference case status, settlement stage, or assigned attorney</td><td class="val" style="color:#6A1B9A;">~$2M/yr</td></tr>
+      </table>
+
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">The day we get all 25 offices + 1-800-229-7989 billboard line on our AI integrated with your case management system &mdash; every case update, every new PI intake, every insurer counter-offer across all 300 individual, 25 office and national lines gets real answers and instant routing 24/7 &mdash; across 6,000 calls/day.</div>
       <div class="uplift">approx $50M/yr uplift</div>
+
+      <div class="comms-label">Example pitch</div>
       <div class="alert-box">Mitri, right now John handles your personal line. Imagine that same quality on the 1-800 billboard line and every office from Birmingham to Atlanta to Nashville &mdash; where a new PI lead calling at 11pm gets proper intake, a client calling for a case update hears "I see your case is with paralegal Taylor, last update was March 5th", and an insurer with a counter-offer gets transferred to the right attorney instantly. That's 6,000 calls a day handled 24/7 across all 25 offices.</div>
     </div>
   </div>
 </div>
 
-<!-- ==================== DEEP DIVE: STAYCI ==================== -->
+<!-- ==================== STAYCI ==================== -->
 <div class="page page-white">
   <h2>Deep Dive: Stayci Runnels</h2>
   <p class="section-sub">Centex Restoration & Construction &mdash; Free Plan</p>
 
   <div class="dive-card">
-    <div class="dive-header">
-      <div class="dive-avatar" style="background:#1565C0;">SR</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px; padding-bottom:20px; border-bottom:1px solid #E8E4E0;">
       <div>
-        <h3 style="margin:0;">Stayci Runnels, Director of Restoration Sales</h3>
-        <div class="dive-meta">10 regional offices across 10+ states &middot; 200-300 employees &middot; 80 revenue-stakes lines &middot; AI (unnamed) &middot; 62 calls/mo &middot; 37% cvo rate &middot; 3 VIPs &middot; Free plan at 3x capacity &middot; Robert Wofford also on platform</div>
+        <div class="diag-label" style="margin-bottom:6px;">Account Potential</div>
+        <h3 style="margin:0;">Centex Restoration & Construction</h3>
+        <div class="dive-meta">10 regional offices across 10+ states &middot; 200-300 employees &middot; 80 revenue-stakes phone lines &middot; Toll-free: (855) CENTEX-1</div>
+      </div>
+      <div>
+        <div class="diag-label" style="margin-bottom:6px;">User Overview</div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div class="dive-avatar" style="background:#1565C0; width:44px; height:44px; font-size:1em;">SR</div>
+          <div>
+            <div style="font-weight:600;">Stayci Runnels, Director of Restoration Sales</div>
+            <div class="dive-meta">Free plan (3x over limit) &middot; 62 calls/mo &middot; 37% cvo &middot; 3 VIPs &middot; Robert Wofford also on platform</div>
+          </div>
+        </div>
       </div>
     </div>
 
+    <!-- FREE FIXES -->
     <div class="step-row step-free">
       <div class="step-title">Free Fixes</div>
-      <div class="msg">Let's fix your scenario gaps so your AI can distinguish new prospects from existing clients and text adjusters a confirmation so they know you're on it. E.g. add caller scenario: "If existing client or returning property manager" &rarr; "Ask which property, what they need, confirm Stayci will follow up with status."</div>
+
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check">&#10003;</td><td>VIP contacts: 3 tagged</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#E65100;">&#9888;</td><td>Cvo rate: 37% (above threshold but greeting is 14 words &mdash; could trim company name)</td><td class="val" style="color:#2E7D32;">&lt;$12K/yr</td></tr>
+        <tr><td class="check" style="color:#E65100;">&#9888;</td><td>Caller scenarios: 3 defined (prop mgr, adjuster, vendor) but missing existing client & new prospect</td><td class="val" style="color:#2E7D32;">&lt;$12K/yr</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Text follow-ups: none &mdash; no restoration lead confirmations or assessment scheduling links</td><td class="val" style="color:#2E7D32;">&lt;$12K/yr</td></tr>
+      </table>
+
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Let's fix your scenario gaps so your AI can distinguish new prospects from existing clients and text adjusters a confirmation so they know you're on it. E.g. add caller scenario: "If existing client or returning property manager" &rarr; "Ask which property, what they need, confirm Stayci will follow up with status."</div>
       <div class="uplift">&lt;$35K/yr uplift</div>
+
+      <div class="comms-label">Example outreach</div>
       <div class="alert-box">Hey Stayci, our system flagged a call on Wednesday at 2:19pm where your AI applied generic handling to a caller that likely needed a more specific approach &mdash; looks like a property manager with an active project got the same intake questions as a new caller. Do you have 15 minutes to hop on a call to correct this together?</div>
     </div>
 
     <div class="arrow-row">&darr;</div>
 
+    <!-- SOLO -->
     <div class="step-row step-solo">
       <div class="step-title">Solo Upgrade &mdash; Pro</div>
-      <div class="msg">Let's upgrade you to Pro so your AI covers all 59 monthly calls (not just 20), plus calendar booking and outbound to chase restoration leads.</div>
+
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Call volume: 59 calls vs 20 limit prev cycle &mdash; 3x over cap, 2/3 of calls unprotected</td><td class="val" style="color:#1565C0;">&lt;$36K/yr</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Calendar: not available on Free &mdash; prospects can't book assessments</td><td class="val" style="color:#1565C0;">&lt;$24K/yr</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Outbound: not available on Free &mdash; can't chase restoration leads</td><td class="val" style="color:#1565C0;">&lt;$60K/yr</td></tr>
+      </table>
+
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Let's upgrade you to Pro so your AI covers all 59 monthly calls (not just 20), plus calendar booking and outbound to chase restoration leads.</div>
       <div class="uplift">&lt;$120K/yr uplift</div>
+
+      <div class="comms-label">Example outreach</div>
       <div class="alert-box">Hey Stayci, you're getting about 60 calls a month but your plan only covers 20 &mdash; that means two-thirds of your calls aren't getting AI coverage. Upgrading to Pro covers them all and adds calendar booking so prospects can schedule assessments on the spot. Want to take 5 minutes to get that sorted?</div>
     </div>
 
     <div class="arrow-row">&darr;</div>
 
+    <!-- BRANCH -->
     <div class="step-row step-branch">
       <div class="step-title">Branch Upgrade &mdash; Dallas</div>
-      <div class="msg">Help me get your Dallas regional on YouSquared so every restoration lead and adjuster callback to (972) 358-2086 or your 8 project managers' and estimators' direct lines is serviced instantly 24/7 by AI, and whenever necessary transferred to you or Robert &mdash; across 60 calls/day on those lines.</div>
+
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Call transfer: not configured &mdash; restoration leads and adjuster callbacks go to message-taking</td><td class="val" style="color:#E65100;">&lt;$30K/yr</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Avg time-to-read on revenue-stakes calls: 40 hours</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Dallas regional line (972) 358-2086: not on YouSquared</td><td class="val" style="color:#E65100;">~$600K/yr</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>8 revenue-stakes individual lines (2 sales, 3 PMs, 1 estimator, 1 ops director, 1 superintendent): not on YouSquared</td><td class="val" style="color:#E65100;">~$400K/yr</td></tr>
+        <tr><td class="check">&#10003;</td><td>Robert Wofford (ops manager) already on YouSquared &mdash; natural team member</td><td class="val">&mdash;</td></tr>
+      </table>
+
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Help me get your Dallas regional on YouSquared so every restoration lead and adjuster callback to (972) 358-2086 or your 8 project managers' and estimators' direct lines is serviced instantly 24/7 by AI, and whenever necessary transferred to you or Robert &mdash; across 60 calls/day on those lines.</div>
       <div class="uplift">approx $1.5M/yr uplift</div>
+
+      <div class="comms-label">Example outreach</div>
       <div class="alert-box">Hey Stayci, our system flagged a call last Friday at 4:10pm with potential revenue at stake &mdash; it took about 2 days before it was reviewed. With your Dallas regional line and project managers on YouSquared, Robert could've picked that up live while you were in the field. Do you have 5 minutes to discuss whether this is something you'd like us to trial for you?</div>
     </div>
 
     <div class="arrow-row">&darr;</div>
 
+    <!-- ENTERPRISE -->
     <div class="step-row step-enterprise">
       <div class="step-title">Enterprise</div>
-      <div class="msg">The day we get all 10 regionals + (855) CENTEX-1 on our AI integrated with your project and claims systems &mdash; every restoration lead, every adjuster callback, every property manager request across all 80 individual, 10 regional and national lines gets immediate answers and instant routing 24/7 &mdash; across 1,000 calls/day.</div>
+
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>9 additional regionals not covered (Austin, San Antonio, Houston, Arizona, Florida, Georgia, Carolinas, Colorado, Louisiana)</td><td class="val" style="color:#6A1B9A;">~$7M/yr</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>National toll-free (855) CENTEX-1: not on YouSquared</td><td class="val" style="color:#6A1B9A;">~$1M/yr</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>System integration: 0 of 1,160 contacts enriched &mdash; AI can't pull project status, claim details, or property manager history</td><td class="val" style="color:#6A1B9A;">~$500K/yr</td></tr>
+      </table>
+
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">The day we get all 10 regionals + (855) CENTEX-1 on our AI integrated with your project and claims systems &mdash; every restoration lead, every adjuster callback, every property manager request across all 80 individual, 10 regional and national lines gets immediate answers and instant routing 24/7 &mdash; across 1,000 calls/day.</div>
       <div class="uplift">approx $10M/yr uplift</div>
+
+      <div class="comms-label">Example pitch</div>
       <div class="alert-box">Stayci, right now your AI handles your personal line in Dallas. Imagine that same quality across all 10 regions &mdash; Austin, San Antonio, Florida, Arizona, all of them &mdash; where a property manager calling at 7pm about storm damage gets immediate response, an adjuster calling about a claim hears "I see that project is in mitigation phase with PM Kevin on site", and urgent leads get transferred to the nearest available estimator. That's 1,000 calls a day handled 24/7 across all regions.</div>
     </div>
   </div>
 </div>
 
-<!-- ==================== PRINCIPLES ==================== -->
+<!-- PRINCIPLES -->
 <div class="page page-warm" style="padding-bottom:80px;">
   <h2>Principles</h2>
   <p class="section-sub">How this playbook works</p>
-
   <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
     <div style="background:white; border-radius:12px; padding:24px;">
       <h3 style="color:#E07A5F;">Event-Triggered</h3>
@@ -395,7 +483,6 @@ tr:hover td { background:#FBF9F7; }
       <p style="font-size:0.88em; color:#6B6560;">One alert per week per user. Aggregate multiple events into a weekly digest. User can opt out. Pause after 3 no-responses.</p>
     </div>
   </div>
-
   <div style="text-align:center; margin-top:48px; color:#9E9893; font-size:0.82em;">
     Claude Code Skill: <code style="background:#E8E4E0; padding:2px 8px; border-radius:4px;">~/.claude/skills/proactive-white-glove/SKILL.md</code>
   </div>
