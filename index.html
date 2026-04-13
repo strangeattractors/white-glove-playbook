@@ -3,780 +3,542 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proactive White Glove Playbook — April 7, 2026</title>
+<title>Proactive White Glove Support &mdash; Cheyney Playbook</title>
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --coral: #E07A5F;
-    --coral-light: #FF8370;
-    --charcoal: #2D2A26;
-    --text-secondary: #6B6560;
-    --text-tertiary: #9E9893;
-    --warm-gray: #F5F2EF;
-    --white: #FFFFFF;
-    --green: #4CAF50;
-    --amber: #F9A825;
-    --red: #E53935;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Inter', sans-serif; color: var(--charcoal); background: var(--white); line-height: 1.6; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter',sans-serif; color:#2D2A26; line-height:1.6; }
+.page { max-width:960px; margin:0 auto; padding:60px 40px; }
+.page-warm { background:#F5F2EF; }
+.page-white { background:#FFFFFF; }
+.hero { background: linear-gradient(145deg, #2D2A26 0%, #433F3A 55%, #3A3632 100%); color:white; padding:80px 40px; text-align:center; position:relative; overflow:hidden; }
+.hero::before { content:''; position:absolute; width:600px; height:600px; background:radial-gradient(circle, rgba(255,131,112,0.15) 0%, transparent 70%); top:-200px; right:-100px; }
+.hero::after { content:''; position:absolute; width:400px; height:400px; background:radial-gradient(circle, rgba(224,122,95,0.1) 0%, transparent 70%); bottom:-150px; left:-50px; }
+.hero h1 { font-family:'Lora',serif; font-size:2.8em; font-weight:700; margin-bottom:16px; position:relative; z-index:1; }
+.hero .subtitle { font-size:1.15em; color:rgba(255,255,255,0.7); max-width:600px; margin:0 auto; position:relative; z-index:1; }
+.hero .date { color:#9E9893; margin-top:8px; font-size:0.95em; position:relative; z-index:1; }
+h2 { font-family:'Lora',serif; font-size:1.8em; font-weight:700; margin-bottom:8px; }
+h3 { font-family:'Lora',serif; font-size:1.3em; font-weight:600; margin-bottom:6px; }
+.section-sub { color:#6B6560; font-size:0.95em; margin-bottom:32px; }
+.path { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:0; margin:32px 0; }
+.path-step { padding:24px 20px; border-right:1px solid rgba(0,0,0,0.06); }
+.path-step:last-child { border-right:none; }
+.step-badge { display:inline-block; font-size:0.7em; font-weight:700; text-transform:uppercase; letter-spacing:1px; padding:3px 10px; border-radius:20px; margin-bottom:10px; }
+.badge-free { background:#E8F5E9; color:#2E7D32; }
+.badge-solo { background:#E3F2FD; color:#1565C0; }
+.badge-elite { background:#E3F2FD; color:#1565C0; }
+.badge-branch { background:#FFF3E0; color:#E65100; }
+.badge-enterprise { background:#F3E5F5; color:#6A1B9A; }
+.path-step h4 { font-family:'Lora',serif; font-size:1.05em; margin-bottom:6px; }
+.path-step p { font-size:0.82em; color:#6B6560; line-height:1.5; }
+table { width:100%; border-collapse:collapse; font-size:0.82em; margin:24px 0; }
+th { background:#2D2A26; color:white; padding:12px 14px; text-align:left; font-weight:600; font-size:0.78em; text-transform:uppercase; letter-spacing:0.5px; }
+td { padding:11px 14px; border-bottom:1px solid #E8E4E0; vertical-align:top; }
+tr:hover td { background:#FBF9F7; }
+.user-name { font-weight:600; }
+.company { color:#6B6560; font-size:0.9em; }
+.dive-card { background:white; border-radius:16px; padding:36px; margin:32px 0; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+.dive-avatar { width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Lora',serif; font-weight:700; font-size:1em; color:white; flex-shrink:0; }
+.dive-meta { font-size:0.82em; color:#6B6560; margin-top:2px; }
+.step-row { margin:24px 0; padding:24px; border-radius:12px; }
+.step-free { background:#F1F8F1; border-left:4px solid #2E7D32; }
+.step-solo { background:#EBF4FB; border-left:4px solid #1565C0; }
+.step-branch { background:#FFF8F0; border-left:4px solid #E65100; }
+.step-enterprise { background:#F8F0FA; border-left:4px solid #6A1B9A; }
+.step-row .step-title { font-weight:700; font-size:0.78em; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:12px; }
+.step-free .step-title { color:#2E7D32; }
+.step-solo .step-title { color:#1565C0; }
+.step-branch .step-title { color:#E65100; }
+.step-enterprise .step-title { color:#6A1B9A; }
+.step-row .uplift { font-family:'Lora',serif; font-weight:700; font-size:1.1em; margin-top:8px; }
+.step-free .uplift { color:#2E7D32; }
+.step-solo .uplift { color:#1565C0; }
+.step-branch .uplift { color:#E65100; }
+.step-enterprise .uplift { color:#6A1B9A; }
+.alert-box { background:rgba(224,122,95,0.08); border-radius:10px; padding:16px 20px; margin-top:14px; font-size:0.85em; font-style:italic; color:#6B6560; border-left:3px solid #E07A5F; }
+.arrow-row { text-align:center; padding:8px 0; color:#9E9893; font-size:1.5em; }
+.diag-label { font-weight:600; font-size:0.75em; text-transform:uppercase; letter-spacing:0.8px; color:#9E9893; margin-bottom:8px; }
+.diag-table { width:100%; border-collapse:collapse; font-size:0.85em; margin:0 0 16px 0; }
+.diag-table td { padding:6px 10px; border-bottom:1px solid rgba(0,0,0,0.06); vertical-align:top; }
+.diag-table tr:last-child td { border-bottom:none; }
+.diag-table .check { width:28px; text-align:center; font-size:1.1em; }
+.diag-table .val { text-align:right; font-family:'Lora',serif; font-weight:600; font-size:0.9em; white-space:nowrap; }
+.approach-label { font-weight:600; font-size:0.75em; text-transform:uppercase; letter-spacing:0.8px; color:#9E9893; margin:16px 0 8px 0; }
+.comms-label { font-weight:600; font-size:0.75em; text-transform:uppercase; letter-spacing:0.8px; color:#9E9893; margin:16px 0 8px 0; }
+.approach-text { font-size:0.9em; line-height:1.6; }
+@media (max-width:800px) {
+  .path { grid-template-columns:1fr; }
+  .path-step { border-right:none; border-bottom:1px solid rgba(0,0,0,0.06); }
+}
+@media print { .page { page-break-after:always; } }
 
-  .page { max-width: 960px; margin: 0 auto; padding: 60px 40px; }
-  .page-warm { background: var(--warm-gray); }
-  .page-break { page-break-after: always; }
-
-  h1 { font-family: 'Lora', serif; font-weight: 700; }
-  h2 { font-family: 'Lora', serif; font-weight: 600; font-size: 1.6em; margin-bottom: 16px; }
-  h3 { font-weight: 600; font-size: 1.1em; margin-bottom: 10px; }
-
-  /* Hero */
-  .hero {
-    background: linear-gradient(145deg, #2D2A26 0%, #433F3A 55%, #3A3632 100%);
-    color: white;
-    padding: 80px 40px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(224,122,95,0.15) 0%, transparent 70%);
-    top: -100px; right: -100px;
-    border-radius: 50%;
-  }
-  .hero::after {
-    content: '';
-    position: absolute;
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(255,131,112,0.1) 0%, transparent 70%);
-    bottom: -80px; left: -80px;
-    border-radius: 50%;
-  }
-  .hero h1 { font-size: 2.4em; margin-bottom: 12px; position: relative; z-index: 1; }
-  .hero .subtitle { color: var(--coral-light); font-size: 1.1em; font-weight: 500; position: relative; z-index: 1; }
-  .hero .date { color: #9E9893; margin-top: 8px; font-size: 0.95em; position: relative; z-index: 1; }
-
-  /* Stats row */
-  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 32px 0; }
-  .stat-card {
-    background: var(--warm-gray);
-    border-radius: 12px;
-    padding: 20px 16px;
-    text-align: center;
-  }
-  .stat-card .number {
-    font-family: 'Lora', serif;
-    font-size: 2em;
-    font-weight: 700;
-    color: var(--coral);
-  }
-  .stat-card .label { color: var(--text-secondary); font-size: 0.85em; margin-top: 4px; }
-
-  /* Tables */
-  table { width: 100%; border-collapse: collapse; font-size: 0.88em; }
-  th { background: var(--charcoal); color: white; padding: 10px 12px; text-align: left; font-weight: 600; font-size: 0.82em; text-transform: uppercase; letter-spacing: 0.5px; }
-  td { padding: 10px 12px; border-bottom: 1px solid #E8E4E0; vertical-align: top; }
-  tr:hover td { background: #FAF8F6; }
-  .rank { font-family: 'Lora', serif; font-weight: 700; color: var(--coral); font-size: 1.1em; }
-  .plan-badge {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 0.78em;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-  .plan-free { background: #FFF3E0; color: #E65100; }
-  .plan-pro { background: #E8F5E9; color: #2E7D32; }
-  .plan-elite { background: #E3F2FD; color: #1565C0; }
-  .plan-team { background: #F3E5F5; color: #7B1FA2; }
-
-  .tier-label {
-    font-size: 0.72em;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 4px 10px;
-    border-radius: 4px;
-    display: inline-block;
-    margin-bottom: 12px;
-  }
-  .tier-1 { background: #FFEBEE; color: #C62828; }
-  .tier-2 { background: #FFF8E1; color: #F57F17; }
-  .tier-3 { background: #E8F5E9; color: #2E7D32; }
-
-  /* Key plays */
-  .play-card {
-    background: var(--warm-gray);
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin: 12px 0;
-    border-left: 4px solid var(--coral);
-  }
-  .play-card h4 { font-size: 0.95em; margin-bottom: 6px; }
-  .play-card p { font-size: 0.88em; color: var(--text-secondary); }
-
-  /* Engagement approach */
-  .approach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
-  .approach-card {
-    border-radius: 12px;
-    padding: 20px;
-    border: 1px solid #E8E4E0;
-  }
-  .approach-card h4 { font-size: 0.9em; margin-bottom: 8px; }
-  .approach-card p { font-size: 0.82em; color: var(--text-secondary); line-height: 1.5; }
-  .approach-card .template {
-    background: white;
-    border-radius: 8px;
-    padding: 12px 16px;
-    margin-top: 10px;
-    font-size: 0.85em;
-    font-style: italic;
-    color: var(--charcoal);
-    border: 1px dashed #D5D0CC;
-  }
-
-  .callout {
-    background: #FFF8E1;
-    border-left: 4px solid #F9A825;
-    border-radius: 0 8px 8px 0;
-    padding: 16px 20px;
-    margin: 20px 0;
-  }
-  .callout .label { font-weight: 700; font-size: 0.78em; color: #E65100; text-transform: uppercase; margin-bottom: 4px; }
-
-  .dollar { color: var(--coral); font-weight: 700; }
-  .delay-bad { color: #C62828; font-weight: 600; }
-  .delay-warn { color: #F57F17; font-weight: 600; }
-  .maxed { color: #C62828; font-weight: 600; font-size: 0.78em; }
-
-  .section-divider {
-    height: 4px;
-    background: linear-gradient(90deg, var(--coral) 0%, transparent 100%);
-    border-radius: 2px;
-    margin: 40px 0;
-  }
-
-  .ae-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-  .ae-avatar {
-    width: 48px; height: 48px;
-    border-radius: 50%;
-    background: var(--coral);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Lora', serif;
-    font-weight: 700;
-    font-size: 1.2em;
-  }
-
-  @media print {
-    .page { padding: 40px 30px; }
-    .hero { padding: 50px 30px; }
-  }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
 <div class="hero">
-  <h1>Proactive White Glove Playbook</h1>
-  <div class="subtitle">Top 20 Contacts to Engage — Cheyney & Eleonora</div>
-  <div class="date">Retrospective: April 7, 2026 &middot; Window: Apr 1 &ndash; 7</div>
+  <h1>Proactive White Glove Support</h1>
+  <div class="subtitle">A seller playbook to diagnose, fix, and expand qualified sales leads through free and paid YouSquared activations</div>
+  <div class="date">Cheyney &middot; 2026-04-08 &middot; Window: Apr 2–8</div>
 </div>
 
-<!-- OVERVIEW STATS -->
-<div class="page">
-  <h2>Portfolio Overview</h2>
-  <div class="stats-row">
-    <div class="stat-card">
-      <div class="number">149</div>
-      <div class="label">Cheyney HubSpot contacts</div>
+<div class="page page-white">
+  <h2>The 4-Step Upgrade Path</h2>
+  <p class="section-sub">Each step builds on the last. Start with free value, earn trust, expand.</p>
+  <div class="path">
+    <div class="path-step">
+      <span class="step-badge badge-free">Free Fixes</span>
+      <h4>Scenarios, FAQ &amp; Texts</h4>
+      <p>Fix how their AI handles different caller types. Add text follow-ups. Immediate value, zero cost.</p>
     </div>
-    <div class="stat-card">
-      <div class="number">155</div>
-      <div class="label">Eleonora HubSpot contacts</div>
+    <div class="path-step">
+      <span class="step-badge badge-solo">Solo Upgrades</span>
+      <h4>Pro or Elite Plan</h4>
+      <p>Unlock call volume, calendar booking, and outbound follow-up for the individual user.</p>
     </div>
-    <div class="stat-card">
-      <div class="number">83 / 82</div>
-      <div class="label">Qualified (20+ emp)</div>
+    <div class="path-step">
+      <span class="step-badge badge-branch">Branch Upgrade</span>
+      <h4>Team: 1 Branch</h4>
+      <p>Cover the branch line + individual rep lines. Transfer, shared inbox. 24/7 instant service.</p>
     </div>
-    <div class="stat-card">
-      <div class="number">30 / 30</div>
-      <div class="label">Active in window</div>
-    </div>
-  </div>
-
-  <div class="stats-row">
-    <div class="stat-card">
-      <div class="number">63</div>
-      <div class="label">Cheyney urgent calls</div>
-    </div>
-    <div class="stat-card">
-      <div class="number">62</div>
-      <div class="label">Eleonora urgent calls</div>
-    </div>
-    <div class="stat-card">
-      <div class="number" style="color:#C62828">0%</div>
-      <div class="label">Have call transfer</div>
-    </div>
-    <div class="stat-card">
-      <div class="number">4 + 4</div>
-      <div class="label">Free users at limit</div>
+    <div class="path-step">
+      <span class="step-badge badge-enterprise">Enterprise</span>
+      <h4>All Branches + Integration</h4>
+      <p>Every individual, branch &amp; national line. System integration for real answers. Full AI coverage.</p>
     </div>
   </div>
 </div>
 
-<!-- ========== CHEYNEY ========== -->
-<div class="page page-warm page-break">
-  <div class="ae-header">
-    <div class="ae-avatar">C</div>
-    <div>
-      <h2 style="margin-bottom:0">Cheyney's Top 20</h2>
-      <div style="color:var(--text-secondary); font-size:0.9em">79 onboarded &middot; 30 active in Apr 1&ndash;7 &middot; 83 qualified</div>
-    </div>
-  </div>
-
-  <!-- Tier 1 -->
-  <div class="tier-label tier-1">Tier 1 &mdash; Revenue-Stakes Pain</div>
+<div class="page page-warm">
+  <h2>User Overview</h2>
+  <p class="section-sub">Target sales leads ranked by total opportunity. Deep dives below.</p>
   <table>
-    <tr>
-      <th>#</th>
-      <th>Name</th>
-      <th>Company</th>
-      <th>Emp</th>
-      <th>Plan</th>
-      <th>Urgent</th>
-      <th>Avg Delay</th>
-      <th>$ at Risk</th>
-    </tr>
-    <tr>
-      <td class="rank">1</td>
-      <td><strong>John Grondona</strong></td>
-      <td>All Access Services</td>
-      <td>150</td>
-      <td><span class="plan-badge plan-team">Team</span></td>
-      <td>14</td>
-      <td class="delay-warn">17.8hr</td>
-      <td class="dollar">$1.8K&ndash;$9K</td>
-    </tr>
-    <tr>
-      <td colspan="8" style="font-size:0.82em; color:var(--text-secondary); padding:4px 12px 12px 40px;">
-        Equipment rental: boom lifts, scissor lifts, forklifts. 12+ true rev-stakes (urgent deliveries, quotes, dispatches). Already on Team &mdash; pitch inbox sharing + branch lines.
-      </td>
-    </tr>
-    <tr>
-      <td class="rank">2</td>
-      <td><strong>Bobby Beeman</strong></td>
-      <td>All Access Services</td>
-      <td>100</td>
-      <td><span class="plan-badge plan-team">Team</span></td>
-      <td>7</td>
-      <td style="color:var(--text-tertiary)">no data</td>
-      <td class="dollar">$600&ndash;$3K</td>
-    </tr>
-    <tr>
-      <td colspan="8" style="font-size:0.82em; color:var(--text-secondary); padding:4px 12px 12px 40px;">
-        Same company. 6 rev-stakes: boom lift urgency (Tillman project), forklift orders, mechanic dispatch. Part of the All Access branch play.
-      </td>
-    </tr>
-    <tr>
-      <td class="rank">3</td>
-      <td><strong>Eric Turner</strong></td>
-      <td>Airgas</td>
-      <td>18K</td>
-      <td><span class="plan-badge plan-free">Free</span> <span class="maxed">MAXED 20/20</span></td>
-      <td>3</td>
-      <td class="delay-warn">21.0hr</td>
-      <td class="dollar">$1.5K&ndash;$6K</td>
-    </tr>
-    <tr>
-      <td colspan="8" style="font-size:0.82em; color:var(--text-secondary); padding:4px 12px 12px 40px;">
-        Legal-type calls: opposition analysis, PI referral, court filings. Hit volume limit. Solo upgrade + transfer pitch.
-      </td>
-    </tr>
-    <tr>
-      <td class="rank">4</td>
-      <td><strong>Mark Groves</strong></td>
-      <td>Compass</td>
-      <td>340K</td>
-      <td><span class="plan-badge plan-pro">Pro</span></td>
-      <td>4</td>
-      <td class="delay-warn">17.6hr</td>
-      <td class="dollar">$900&ndash;$3K</td>
-    </tr>
-    <tr>
-      <td colspan="8" style="font-size:0.82em; color:var(--text-secondary); padding:4px 12px 12px 40px;">
-        Real estate: client board fee crisis (Jocelyn), frustrated Todd Moyer. Fortune 500 &rarr; Branch = focus on local office. 305 lifetime calls.
-      </td>
-    </tr>
-    <tr>
-      <td class="rank">5</td>
-      <td><strong>Nina Moorer</strong></td>
-      <td>Super Patch</td>
-      <td>100</td>
-      <td><span class="plan-badge plan-free">Free</span> <span class="maxed">MAXED</span></td>
-      <td>8</td>
-      <td>7.3hr</td>
-      <td class="dollar">$80&ndash;$200</td>
-    </tr>
-    <tr>
-      <td colspan="8" style="font-size:0.82em; color:var(--text-secondary); padding:4px 12px 12px 40px;">
-        Wellness products: Sam King called 5x (side effects, urgent). Order cancellation. Needs caller scenarios for product issues + Solo for volume.
-      </td>
-    </tr>
-    <tr>
-      <td class="rank">6</td>
-      <td><strong>Yaakov Mavashev</strong></td>
-      <td>Safer Health (pharmacy)</td>
-      <td>57</td>
-      <td><span class="plan-badge plan-elite">Elite</span></td>
-      <td>5</td>
-      <td class="delay-bad">46.9hr</td>
-      <td class="dollar">$80&ndash;$200</td>
-    </tr>
-    <tr>
-      <td colspan="8" style="font-size:0.82em; color:var(--text-secondary); padding:4px 12px 12px 40px;">
-        Pharmacy: Dr. Paul callback, agitated colleague David (3x). <strong>2-day avg delay</strong> &mdash; most dramatic data point. "Urgent calls are waiting nearly 2 days."
-      </td>
-    </tr>
-    <tr>
-      <td class="rank">7</td>
-      <td><strong>Ryan Klosko</strong></td>
-      <td>RealManage (HOA)</td>
-      <td>838</td>
-      <td><span class="plan-badge plan-free">Free</span> <span class="maxed">MAXED</span></td>
-      <td>8</td>
-      <td style="color:var(--text-tertiary)">no data</td>
-      <td style="color:var(--text-secondary)">low direct</td>
-    </tr>
-    <tr>
-      <td colspan="8" style="font-size:0.82em; color:var(--text-secondary); padding:4px 12px 12px 40px;">
-        234 lifetime calls on free plan! 1 rev-stakes (frustrated notary client). Massive volume play: "You're our most active free user."
-      </td>
-    </tr>
-    <tr>
-      <td class="rank">8</td>
-      <td><strong>Conrad Michaels</strong></td>
-      <td>All Access Services</td>
-      <td>100</td>
-      <td><span class="plan-badge plan-team">Team</span></td>
-      <td>2</td>
-      <td>10.4hr</td>
-      <td class="dollar">$200&ndash;$1K</td>
-    </tr>
-    <tr>
-      <td colspan="8" style="font-size:0.82em; color:var(--text-secondary); padding:4px 12px 12px 40px;">
-        Equipment: mechanic dispatch (Ford Fiesta), telehandler exchange for Swinerton Builders. All Access team member.
-      </td>
-    </tr>
-    <tr>
-      <td class="rank">9</td>
-      <td><strong>Integrity Fire Protection</strong></td>
-      <td>Integrity Fire</td>
-      <td>76</td>
-      <td><span class="plan-badge plan-free">Free</span> <span class="maxed">MAXED 20/20</span></td>
-      <td>2</td>
-      <td style="color:var(--text-tertiary)">no data</td>
-      <td class="dollar">$200&ndash;$1K</td>
-    </tr>
-    <tr>
-      <td colspan="8" style="font-size:0.82em; color:var(--text-secondary); padding:4px 12px 12px 40px;">
-        Fire protection: payment callback, fire permit callback. Both rev-stakes. Volume limit + Solo upgrade.
-      </td>
-    </tr>
-    <tr>
-      <td class="rank">10</td>
-      <td><strong>David Dubrino</strong></td>
-      <td>BMI MD</td>
-      <td>25</td>
-      <td><span class="plan-badge plan-free">Free</span></td>
-      <td>2</td>
-      <td style="color:var(--text-tertiary)">no data</td>
-      <td style="color:var(--text-secondary)">low</td>
-    </tr>
-    <tr>
-      <td colspan="8" style="font-size:0.82em; color:var(--text-secondary); padding:4px 12px 12px 40px;">
-        Head of Growth, healthcare. 4 substantive calls. Free fixes for medical scenarios.
-      </td>
-    </tr>
+    <tr><th>User</th><th>Company</th><th>Free Fixes</th><th>Solo Upgrades</th><th>Branch Upgrade</th><th>Enterprise</th><th>Alert Freq</th></tr>
+    <tr><td class='user-name'>Mark G.</td><td class='company'>Compass</td><td>Greeting (<span style='color:#E07A5F;font-weight:600'>$14K/yr</span>)</td><td>&#10003; OK</td><td>No transfer, 103hr avg read</td><td>TBD</td><td><strong>Weekly</strong></td></tr>
+    <tr><td class='user-name'>John G.</td><td class='company'>All Access Services</td><td>Scenarios, Greeting (<span style='color:#E07A5F;font-weight:600'>$11K/yr</span>)</td><td>&#10003; OK</td><td>73hr avg read</td><td>TBD</td><td><strong>Weekly</strong></td></tr>
+    <tr><td class='user-name'>Nina M.</td><td class='company'>Super Patch</td><td>Scenarios, Greeting (<span style='color:#E07A5F;font-weight:600'>$1K/yr</span>)</td><td>Upgrade from Free</td><td>No transfer, 55hr avg read</td><td>TBD</td><td><strong>Weekly</strong></td></tr>
+    <tr><td class='user-name'>Bobby B.</td><td class='company'>All Access Services</td><td>Scenarios, Greeting (<span style='color:#E07A5F;font-weight:600'>$1K/yr</span>)</td><td>&#10003; OK</td><td>TBD</td><td>TBD</td><td>Monthly</td></tr>
+    <tr><td class='user-name'>Enrique O.</td><td class='company'>All Access Services</td><td>Scenarios, Greeting (<span style='color:#E07A5F;font-weight:600'>$400/yr</span>)</td><td>&#10003; OK</td><td>53hr avg read</td><td>TBD</td><td><strong>Weekly</strong></td></tr>
+    <tr><td class='user-name'>Conrad M.</td><td class='company'>All Access Services</td><td>Scenarios, Greeting (<span style='color:#E07A5F;font-weight:600'>$400/yr</span>)</td><td>&#10003; OK</td><td>62hr avg read</td><td>TBD</td><td><strong>Weekly</strong></td></tr>
+    <tr><td class='user-name'>Stephen E.</td><td class='company'>All Access Services</td><td>Scenarios, Greeting (<span style='color:#E07A5F;font-weight:600'>$100/yr</span>)</td><td>&#10003; OK</td><td>TBD</td><td>TBD</td><td>Monthly</td></tr>
+    <tr><td class='user-name'>gonzalez s.</td><td class='company'>zamarripa</td><td>Scenarios, Greeting (<span style='color:#E07A5F;font-weight:600'>$30/yr</span>)</td><td>Upgrade from Free</td><td>No transfer</td><td>TBD</td><td>Monthly</td></tr>
+    <tr><td class='user-name'>Ahmed A.</td><td class='company'>McGill University Health Center</td><td>Scenarios, Greeting</td><td>&#10003; OK</td><td>No transfer</td><td>TBD</td><td>Monthly</td></tr>
+    <tr><td class='user-name'>Nick R.</td><td class='company'>Earnin</td><td>FAQ</td><td>&#10003; OK</td><td>30hr avg read</td><td>TBD</td><td><strong>Weekly</strong></td></tr>
   </table>
+</div>
 
-  <!-- Tier 2 -->
-  <div style="margin-top:32px">
-    <div class="tier-label tier-2">Tier 2 &mdash; Active, Lower Urgency</div>
-    <table>
-      <tr><th>#</th><th>Name</th><th>Company</th><th>Emp</th><th>Signal</th></tr>
-      <tr><td class="rank">11</td><td>Al Burgess</td><td>Teamsters Local 952</td><td>30</td><td>2 urgent (termination, ballot). Union ops.</td></tr>
-      <tr><td class="rank">12</td><td>Carlos Diaz</td><td>Diaz Office</td><td>65</td><td>4 urgent (mostly personal). Low rev-stakes.</td></tr>
-      <tr><td class="rank">13</td><td>Enrique Ochoa</td><td>All Access Services</td><td>150</td><td>4 substantive, 0 urgent. All Access team member.</td></tr>
-      <tr><td class="rank">14</td><td>Jon Harris</td><td>Infinigy</td><td>200</td><td>2 substantive. Adviser at infrastructure co.</td></tr>
-      <tr><td class="rank">15</td><td>Galen Hair</td><td>HSTA Law</td><td>40</td><td>Managing Partner. 2 substantive. Legal = $5&ndash;20K/call.</td></tr>
-    </table>
-  </div>
-
-  <!-- Tier 3 -->
-  <div style="margin-top:32px">
-    <div class="tier-label tier-3">Tier 3 &mdash; High-Value Dormant / Re-Engagement</div>
-    <table>
-      <tr><th>#</th><th>Name</th><th>Company</th><th>Emp</th><th>Title</th><th>Signal</th></tr>
-      <tr><td class="rank">16</td><td>Yogi Shivdasani</td><td>Pick Your Part</td><td>400</td><td>CEO</td><td>Onboarded, never activated. Auto salvage = high call volume.</td></tr>
-      <tr><td class="rank">17</td><td>Jeremiah Giovanna</td><td>Centex Construction</td><td>500</td><td>Director</td><td>Dormant since Mar 19. Construction = $2&ndash;10K/call.</td></tr>
-      <tr><td class="rank">18</td><td>Joe Ford</td><td>Carter Machinery</td><td>2,300</td><td>Field Tech</td><td>Active (Apr 9) but 0 calls in window. Equipment industry.</td></tr>
-      <tr><td class="rank">19</td><td>James Feaheny</td><td>National Realty Centers</td><td>625</td><td>Assoc. Broker</td><td>Dormant. Real estate = $3&ndash;10K/call.</td></tr>
-      <tr><td class="rank">20</td><td>Danny Kress</td><td>All Access</td><td>200</td><td>Owner</td><td>HubSpot contact. Strategic for All Access branch sale.</td></tr>
-    </table>
+<div class="page page-white">
+  <h2>Deep Dive: Mark Groves</h2>
+  <p class="section-sub">Compass &mdash; Pro Plan</p>
+  <div class="dive-card">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px; padding-bottom:20px; border-bottom:1px solid #E8E4E0;">
+      <div>
+        <div class="diag-label" style="margin-bottom:6px;">Account Potential</div>
+        <h3 style="margin:0;">Compass</h3>
+        <div class="dive-meta">340,000 employees</div>
+      </div>
+      <div>
+        <div class="diag-label" style="margin-bottom:6px;">User Overview</div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div class="dive-avatar" style="background:#6A1B9A;">MG</div>
+          <div>
+            <div style="font-weight:600;">Mark Groves, Sales Manager</div>
+            <div class="dive-meta">Pro plan &middot; AI "Jake" &middot; 54 calls/cycle &middot; 41% cvo &middot; 33 VIPs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="step-row step-free">
+      <div class="step-title">Free Fixes</div>
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check">&#10003;</td><td>VIP contacts: 33 tagged (threshold: 2+)</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#E65100;">&#9888;</td><td>Cvo rate: 41%, greeting is 8 words &mdash; could trim</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check">&#10003;</td><td>Caller scenarios: configured</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check">&#10003;</td><td>FAQ: 247 chars</td><td class="val">&mdash;</td></tr>
+      </table>
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Jake is well-configured for free features.</div>
+      <div class="comms-label">Example outreach</div>
+      <div class="alert-box">Hey Mark, our system flagged a call where Jake applied generic handling to a caller that likely needed a more specific approach. Do you have 15 minutes to hop on a call to correct this together?</div>
+    </div>
+    <div class="arrow-row">&darr;</div>
+    <div class="step-row step-solo">
+      <div class="step-title">Solo Upgrade</div>
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check">&#10003;</td><td>Call volume: 54/200 prev cycle (27%)</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check">&#10003;</td><td>Plan: Pro</td><td class="val">&mdash;</td></tr>
+      </table>
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Jake is on Pro &mdash; solo features are covered.</div>
+      
+    </div>
+    <div class="arrow-row">&darr;</div>
+    <div class="step-row step-branch">
+      <div class="step-title">Branch Upgrade &mdash; Compass</div>
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Call transfer: not configured &mdash; urgent calls go to message-taking</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Avg time-to-read on revenue-stakes calls: 103 hours</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check">&#10003;</td><td>Dedicated phone number: configured</td><td class="val">&mdash;</td></tr>
+      </table>
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Let's get your Compass branch on YouSquared so every property inquiry to your branch line or your reps' direct lines is serviced instantly 24/7 by AI, and whenever necessary transferred to the right person.</div>
+      <div class="comms-label">Example outreach</div>
+      <div class="alert-box">Hey Mark, our system flagged a call with potential revenue at stake &mdash; it took about 103 hours before it was reviewed. With your branch line and reps on YouSquared, a team member could've picked that up live. Do you have 5 minutes to discuss?</div>
+    </div>
+    <div class="arrow-row">&darr;</div>
+    <div class="step-row step-enterprise">
+      <div class="step-title">Enterprise</div>
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Additional branches: research needed</td><td class="val" style="color:#6A1B9A;">TBD</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Main national line: not on YouSquared</td><td class="val" style="color:#6A1B9A;">TBD</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>System integration: 14 of 2,410 contacts enriched &mdash; AI can't look up answers</td><td class="val" style="color:#6A1B9A;">TBD</td></tr>
+      </table>
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">The enterprise opportunity at Compass is a separate conversation with Corporate. Focus Branch upgrade on Mark's local office first.</div>
+      <div class="comms-label">Example pitch</div>
+      <div class="alert-box">Mark, right now Jake handles your personal line great. Imagine that same quality across all your locations &mdash; where any caller gets accurate answers from AI that knows your systems, and urgent calls get transferred to the nearest available person.</div>
+    </div>
   </div>
 </div>
 
-<!-- Cheyney Key Plays -->
-<div class="page">
-  <h2>Cheyney &mdash; Key Plays</h2>
-
-  <div class="play-card">
-    <h4>1. All Access Services &mdash; Branch Upgrade</h4>
-    <p>5 reps already on YouSquared (Grondona, Beeman, Michaels, Ennis, Ochoa) + owner Danny Kress in HubSpot. 23+ urgent calls/week across the team. <strong>Pitch</strong>: "5 of your reps are already on YouSquared handling 20+ equipment calls/day. Let's get the branch line + all reps covered 24/7 &mdash; every boom lift, forklift, and scissor lift request serviced instantly."</p>
-  </div>
-
-  <div class="play-card">
-    <h4>2. Volume Limit Users &mdash; Instant Upgrade Conversation</h4>
-    <p>4 users maxed at 20 calls: <strong>Eric Turner</strong> (legal, $1.5&ndash;6K at risk), <strong>Nina Moorer</strong> (wellness, 154 lifetime calls), <strong>Ryan Klosko</strong> (HOA, 234 lifetime calls!), <strong>Integrity Fire</strong> (fire protection, 40 lifetime calls). All are power users trapped on free.</p>
-  </div>
-
-  <div class="play-card">
-    <h4>3. Yaakov Mavashev &mdash; Extreme Delay Alert</h4>
-    <p>46.9-hour avg delay on pharmacy calls is the most dramatic data point in the portfolio. Lead with urgency: "Our system flagged a pattern: urgent calls are waiting nearly 2 days before you see them. With transfer, a team member could handle these live."</p>
-  </div>
-
-  <div class="play-card">
-    <h4>4. Mark Groves &mdash; Fortune 500 Internal Champion</h4>
-    <p>Compass (340K employees). 305 lifetime calls on Pro. Client board fee crisis unresolved for 17+ hours. Branch = focus on Mark's local office. AE role = help Mark become an internal champion for his branch.</p>
+<div class="page page-white">
+  <h2>Deep Dive: John Grondona</h2>
+  <p class="section-sub">All Access Services &mdash; Team Plan</p>
+  <div class="dive-card">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px; padding-bottom:20px; border-bottom:1px solid #E8E4E0;">
+      <div>
+        <div class="diag-label" style="margin-bottom:6px;">Account Potential</div>
+        <h3 style="margin:0;">All Access Services</h3>
+        <div class="dive-meta">150 employees</div>
+      </div>
+      <div>
+        <div class="diag-label" style="margin-bottom:6px;">User Overview</div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div class="dive-avatar" style="background:#4E7A5F;">JG</div>
+          <div>
+            <div style="font-weight:600;">John Grondona, Sales manager</div>
+            <div class="dive-meta">Team plan &middot; AI "AI" &middot; 17 calls/cycle &middot; 55% cvo &middot; 43 VIPs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="step-row step-free">
+      <div class="step-title">Free Fixes</div>
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check">&#10003;</td><td>VIP contacts: 43 tagged (threshold: 2+)</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#E65100;">&#9888;</td><td>Cvo rate: 55%, greeting is 13 words &mdash; could trim</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Caller scenarios: none defined &mdash; all caller types get generic handling</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check">&#10003;</td><td>FAQ: 9,567 chars</td><td class="val">&mdash;</td></tr>
+      </table>
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Let's fix your scenarios so your AI can handle different caller types. E.g. add caller scenario: "If caller asks about equipment" &rarr; "Ask what type, size, when needed, delivery or pickup."</div>
+      <div class="comms-label">Example outreach</div>
+      <div class="alert-box">Hey John, our system flagged a call where your AI applied generic handling to a caller that likely needed a more specific approach. Do you have 15 minutes to hop on a call to correct this together?</div>
+    </div>
+    <div class="arrow-row">&darr;</div>
+    <div class="step-row step-solo">
+      <div class="step-title">Solo Upgrade</div>
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check">&#10003;</td><td>Call volume: 17/1,000 prev cycle (2%)</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check">&#10003;</td><td>Plan: Team &mdash; all features available</td><td class="val">&mdash;</td></tr>
+      </table>
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">your AI is on Team &mdash; solo features are covered.</div>
+      
+    </div>
+    <div class="arrow-row">&darr;</div>
+    <div class="step-row step-branch">
+      <div class="step-title">Branch Upgrade &mdash; All Access Services</div>
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check">&#10003;</td><td>Call transfer: configured</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Avg time-to-read on revenue-stakes calls: 73 hours</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check">&#10003;</td><td>Dedicated phone number: configured</td><td class="val">&mdash;</td></tr>
+      </table>
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Let's get your All Access Services branch on YouSquared so every equipment inquiry to your branch line or your reps' direct lines is serviced instantly 24/7 by AI, and whenever necessary transferred to the right person.</div>
+      <div class="comms-label">Example outreach</div>
+      <div class="alert-box">Hey John, our system flagged a call with potential revenue at stake &mdash; it took about 73 hours before it was reviewed. With your branch line and reps on YouSquared, a team member could've picked that up live. Do you have 5 minutes to discuss?</div>
+    </div>
+    <div class="arrow-row">&darr;</div>
+    <div class="step-row step-enterprise">
+      <div class="step-title">Enterprise</div>
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Additional branches: research needed</td><td class="val" style="color:#6A1B9A;">TBD</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Main national line: not on YouSquared</td><td class="val" style="color:#6A1B9A;">TBD</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>System integration: 0 of 4,234 contacts enriched &mdash; AI can't look up answers</td><td class="val" style="color:#6A1B9A;">TBD</td></tr>
+      </table>
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Let's scale this across all of All Access Services's locations + main line on our AI integrated with your systems.</div>
+      <div class="comms-label">Example pitch</div>
+      <div class="alert-box">John, right now your AI handles your personal line great. Imagine that same quality across all your locations &mdash; where any caller gets accurate answers from AI that knows your systems, and urgent calls get transferred to the nearest available person.</div>
+    </div>
   </div>
 </div>
 
-<!-- ========== ELEONORA ========== -->
-<div class="page page-warm page-break">
-  <div class="ae-header">
-    <div class="ae-avatar" style="background:#7B68A0">E</div>
-    <div>
-      <h2 style="margin-bottom:0">Eleonora's Top 20</h2>
-      <div style="color:var(--text-secondary); font-size:0.9em">68 onboarded &middot; 30 active in Apr 1&ndash;7 &middot; 82 qualified</div>
+<div class="page page-white">
+  <h2>Deep Dive: Nina Moorer</h2>
+  <p class="section-sub">Super Patch &mdash; Free Plan</p>
+  <div class="dive-card">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px; padding-bottom:20px; border-bottom:1px solid #E8E4E0;">
+      <div>
+        <div class="diag-label" style="margin-bottom:6px;">Account Potential</div>
+        <h3 style="margin:0;">Super Patch</h3>
+        <div class="dive-meta">100 employees</div>
+      </div>
+      <div>
+        <div class="diag-label" style="margin-bottom:6px;">User Overview</div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div class="dive-avatar" style="background:#C75B39;">NM</div>
+          <div>
+            <div style="font-weight:600;">Nina Moorer, Health and Wellness Strategist and Event MC and Host</div>
+            <div class="dive-meta">Free plan &middot; AI "AI" &middot; 4 calls/cycle &middot; 43% cvo &middot; 14 VIPs</div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <!-- Tier 1 -->
-  <div class="tier-label tier-1">Tier 1 &mdash; Revenue-Stakes Pain</div>
-  <table>
-    <tr>
-      <th>#</th>
-      <th>Name</th>
-      <th>Company</th>
-      <th>Emp</th>
-      <th>Plan</th>
-      <th>Urgent</th>
-      <th>Avg Delay</th>
-      <th>$ at Risk</th>
-    </tr>
-    <tr>
-      <td class="rank">1</td>
-      <td><strong>Alexander Shunnarah</strong></td>
-      <td>ASTA (PI Law)</td>
-      <td>500</td>
-      <td><span class="plan-badge plan-elite">Elite</span></td>
-      <td>10</td>
-      <td style="color:var(--text-tertiary)">no data</td>
-      <td class="dollar">$4.5K&ndash;$18K</td>
-    </tr>
-    <tr>
-      <td colspan="8" style="font-size:0.82em; color:var(--text-secondary); padding:4px 12px 12px 40px;">
-        PI law: 6 true rev-stakes &mdash; new PI client (son struck on shin), Saba referral (accident victim), Michael Turner case follow-up (2x). $5&ndash;20K/case. Caller scenarios for PI intake + triage.
-      </td>
-    </tr>
-    <tr>
-      <td class="rank">2</td>
-      <td><strong>Drew Horsefield</strong></td>
-      <td>Bish's RV</td>
-      <td>400</td>
-      <td><span class="plan-badge plan-free">Free</span></td>
-      <td>5</td>
-      <td class="delay-bad">42.9hr</td>
-      <td class="dollar">$600&ndash;$3K</td>
-    </tr>
-    <tr>
-      <td colspan="8" style="font-size:0.82em; color:var(--text-secondary); padding:4px 12px 12px 40px;">
-        Dir. of Fixed Ops. RV repair (awning issue), <strong>hiring decision (may lose Chris Stevens)</strong>, frustrated repeat caller. 224 lifetime calls on free. 14 substantive in window.
-      </td>
-    </tr>
-    <tr>
-      <td class="rank">3</td>
-      <td><strong>Elvis Gigic</strong></td>
-      <td>cam Industrial Solutions</td>
-      <td>50</td>
-      <td><span class="plan-badge plan-elite">Elite</span></td>
-      <td>8</td>
-      <td class="delay-warn">14.4hr</td>
-      <td class="dollar">$300&ndash;$3K</td>
-    </tr>
-    <tr>
-      <td colspan="8" style="font-size:0.82em; color:var(--text-secondary); padding:4px 12px 12px 40px;">
-        Ops Manager. Jeremiah Hayes called 3x frustrated (landlord info, voicemail follow-ups). Payment inquiry from Steven Jannick. VIP frustration pattern.
-      </td>
-    </tr>
-    <tr>
-      <td class="rank">4</td>
-      <td><strong>Pete Dunn</strong></td>
-      <td>Masters Telecom</td>
-      <td>38</td>
-      <td><span class="plan-badge plan-pro">Pro</span></td>
-      <td>3</td>
-      <td>8.8hr</td>
-      <td class="dollar">$200&ndash;$1K</td>
-    </tr>
-    <tr>
-      <td colspan="8" style="font-size:0.82em; color:var(--text-secondary); padding:4px 12px 12px 40px;">
-        <strong style="color:#C62828">TIME-CRITICAL</strong>: Verizon/Darden Restaurants deal with CradlePoint pricing expiring in April. Business opportunity callback. "Our system flagged a deal-related call with a deadline."
-      </td>
-    </tr>
-    <tr>
-      <td class="rank">5</td>
-      <td><strong>PJ Bachman</strong></td>
-      <td>Okie Solar</td>
-      <td>25</td>
-      <td><span class="plan-badge plan-elite">Elite</span></td>
-      <td>6</td>
-      <td>6.7hr</td>
-      <td class="dollar">$200&ndash;$1K</td>
-    </tr>
-    <tr>
-      <td colspan="8" style="font-size:0.82em; color:var(--text-secondary); padding:4px 12px 12px 40px;">
-        Solar: Signature Solar partnership call (BD opportunity!), Tyler Bradshaw callback. Fast reader (6.7hr) but partnership is high value.
-      </td>
-    </tr>
-    <tr>
-      <td class="rank">6</td>
-      <td><strong>Troy Guttormson</strong></td>
-      <td>Fluid Solutions (United Rentals)</td>
-      <td>28.5K</td>
-      <td><span class="plan-badge plan-free">Free</span></td>
-      <td>2</td>
-      <td class="delay-bad">48.9hr</td>
-      <td class="dollar">$400&ndash;$2K</td>
-    </tr>
-    <tr>
-      <td colspan="8" style="font-size:0.82em; color:var(--text-secondary); padding:4px 12px 12px 40px;">
-        Herc Rentals district manager meeting + pump delivery coordination. <strong>Nearly 2-day delays</strong> on business calls. 59 total calls on free.
-      </td>
-    </tr>
-    <tr>
-      <td class="rank">7</td>
-      <td><strong>Darren Holliman</strong></td>
-      <td>Airetech Corporation</td>
-      <td>50</td>
-      <td><span class="plan-badge plan-free">Free</span></td>
-      <td>4</td>
-      <td class="delay-warn">24.8hr</td>
-      <td style="color:var(--text-secondary)">$0 direct</td>
-    </tr>
-    <tr>
-      <td colspan="8" style="font-size:0.82em; color:var(--text-secondary); padding:4px 12px 12px 40px;">
-        <strong style="color:#C62828">VIP FRUSTRATION</strong>: Rachael called 3x &mdash; "Stop answering his phone." Alert Type 2: add her as VIP with direct transfer. Instant free fix.
-      </td>
-    </tr>
-    <tr>
-      <td class="rank">8</td>
-      <td><strong>Matthew Henry</strong></td>
-      <td>Innovative Control Solutions</td>
-      <td>60</td>
-      <td style="color:var(--text-tertiary)">&mdash;</td>
-      <td>2</td>
-      <td class="delay-bad">48.8hr</td>
-      <td class="dollar">$200&ndash;$1K</td>
-    </tr>
-    <tr>
-      <td colspan="8" style="font-size:0.82em; color:var(--text-secondary); padding:4px 12px 12px 40px;">
-        VP of Automation. 45-day old invoice follow-up (payment recovery is time-sensitive). Nearly 2-day delays.
-      </td>
-    </tr>
-    <tr>
-      <td class="rank">9</td>
-      <td><strong>Adam Arnold</strong></td>
-      <td>Employee Benefit Service Center</td>
-      <td>25</td>
-      <td><span class="plan-badge plan-pro">Pro</span></td>
-      <td>9</td>
-      <td class="delay-warn">20.3hr</td>
-      <td style="color:var(--text-secondary)">low</td>
-    </tr>
-    <tr>
-      <td colspan="8" style="font-size:0.82em; color:var(--text-secondary); padding:4px 12px 12px 40px;">
-        30 substantive calls in 1 week! Mostly personal but massive volume. Free fixes for financial service scenarios. 380 lifetime calls on Pro.
-      </td>
-    </tr>
-    <tr>
-      <td class="rank">10</td>
-      <td><strong>Cody Smith</strong></td>
-      <td>Minot Automotive</td>
-      <td>135</td>
-      <td><span class="plan-badge plan-free">Free</span></td>
-      <td>5</td>
-      <td class="delay-warn">23.5hr</td>
-      <td style="color:var(--text-secondary)">low direct</td>
-    </tr>
-    <tr>
-      <td colspan="8" style="font-size:0.82em; color:var(--text-secondary); padding:4px 12px 12px 40px;">
-        Used Car Manager. All calls personal/financial in window, but 135-emp auto company on free = dormant business opportunity.
-      </td>
-    </tr>
-  </table>
-
-  <!-- Tier 2 -->
-  <div style="margin-top:32px">
-    <div class="tier-label tier-2">Tier 2 &mdash; Active, Lower Urgency</div>
-    <table>
-      <tr><th>#</th><th>Name</th><th>Company</th><th>Emp</th><th>Signal</th></tr>
-      <tr><td class="rank">11</td><td>Angel Cuenca</td><td>IMA Group (medical)</td><td>268</td><td>4 urgent, 0.3hr delay (fastest reader!). Doctor. Free plan. 268 emp = Branch pitch.</td></tr>
-      <tr><td class="rank">12</td><td>Grant Gregg</td><td>Frontier Waste Solutions</td><td>800</td><td>Area VP. 1 urgent. Waste mgmt = $2&ndash;10K/call. High potential.</td></tr>
-      <tr><td class="rank">13</td><td>David Sanchez</td><td>MT Constructors</td><td>20</td><td>1 urgent, 5 substantive. Construction.</td></tr>
-      <tr><td class="rank">14</td><td>Tanner Perdue</td><td>Blue Tank &amp; Pump</td><td>65</td><td>President. 2 substantive. Equipment rental &mdash; similar to All Access.</td></tr>
-      <tr><td class="rank">15</td><td>Robert Wofford</td><td>Centex Restoration</td><td>300</td><td>Ops Mgr. 43 total calls, 1 substantive. Possible greeting problem (high empty rate).</td></tr>
-    </table>
-  </div>
-
-  <!-- Tier 3 -->
-  <div style="margin-top:32px">
-    <div class="tier-label tier-3">Tier 3 &mdash; High-Value Dormant / Strategic</div>
-    <table>
-      <tr><th>#</th><th>Name</th><th>Company</th><th>Emp</th><th>Title</th><th>Signal</th></tr>
-      <tr><td class="rank">16</td><td>Mitri Shatara</td><td>ASTA</td><td>1,000</td><td>Attorney &amp; EVP</td><td>Same firm as Shunnarah. Strategic for Enterprise pitch.</td></tr>
-      <tr><td class="rank">17</td><td>Robert Shannon</td><td>Carlton Fields</td><td>875</td><td>Attorney</td><td>Last active Apr 7. Legal = $5&ndash;20K/call. Just came back online.</td></tr>
-      <tr><td class="rank">18</td><td>Thomas Norlander</td><td>SERVPRO</td><td>160</td><td>CEO</td><td>Franchise restoration = $2&ndash;10K/call. Dormant.</td></tr>
-      <tr><td class="rank">19</td><td>Karen Taylor</td><td>Specialty Restoration TX</td><td>80</td><td>Dir. Roofing</td><td>Restoration = $2&ndash;10K/call. Dormant.</td></tr>
-      <tr><td class="rank">20</td><td>Joel Subias</td><td>Good Shepherd Hospice</td><td>150</td><td>Hospice Consultant</td><td>New user (Mar 11). 3 substantive. Hospice = steady volume.</td></tr>
-    </table>
+    <div class="step-row step-free">
+      <div class="step-title">Free Fixes</div>
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check">&#10003;</td><td>VIP contacts: 14 tagged (threshold: 2+)</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#E65100;">&#9888;</td><td>Cvo rate: 43%, greeting is 18 words &mdash; could trim</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Caller scenarios: none defined &mdash; all caller types get generic handling</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check">&#10003;</td><td>FAQ: 1,951 chars</td><td class="val">&mdash;</td></tr>
+      </table>
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Let's fix your scenarios so your AI can handle different caller types. E.g. add caller scenario: "If patient asking for refill" &rarr; "Ask for name, DOB, medication name, and pharmacy preference."</div>
+      <div class="comms-label">Example outreach</div>
+      <div class="alert-box">Hey Nina, our system flagged a call where your AI applied generic handling to a caller that likely needed a more specific approach. Do you have 15 minutes to hop on a call to correct this together?</div>
+    </div>
+    <div class="arrow-row">&darr;</div>
+    <div class="step-row step-solo">
+      <div class="step-title">Solo Upgrade</div>
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check">&#10003;</td><td>Call volume: 4/20 prev cycle (20%)</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Plan: Free &mdash; limited to 20 calls/cycle</td><td class="val">&mdash;</td></tr>
+      </table>
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Let's upgrade you to Pro so your AI can handle more calls and add outbound follow-up.</div>
+      
+    </div>
+    <div class="arrow-row">&darr;</div>
+    <div class="step-row step-branch">
+      <div class="step-title">Branch Upgrade &mdash; Super Patch</div>
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Call transfer: not configured &mdash; urgent calls go to message-taking</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Avg time-to-read on revenue-stakes calls: 55 hours</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Branch line: not on YouSquared</td><td class="val" style="color:#E65100;">TBD</td></tr>
+      </table>
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Let's get your Super Patch branch on YouSquared so every patient call to your branch line or your reps' direct lines is serviced instantly 24/7 by AI, and whenever necessary transferred to the right person.</div>
+      <div class="comms-label">Example outreach</div>
+      <div class="alert-box">Hey Nina, our system flagged a call with potential revenue at stake &mdash; it took about 55 hours before it was reviewed. With your branch line and reps on YouSquared, a team member could've picked that up live. Do you have 5 minutes to discuss?</div>
+    </div>
+    <div class="arrow-row">&darr;</div>
+    <div class="step-row step-enterprise">
+      <div class="step-title">Enterprise</div>
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Additional branches: research needed</td><td class="val" style="color:#6A1B9A;">TBD</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Main national line: not on YouSquared</td><td class="val" style="color:#6A1B9A;">TBD</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>System integration: 0 of 6,366 contacts enriched &mdash; AI can't look up answers</td><td class="val" style="color:#6A1B9A;">TBD</td></tr>
+      </table>
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Let's scale this across all of Super Patch's locations + main line on our AI integrated with your systems.</div>
+      <div class="comms-label">Example pitch</div>
+      <div class="alert-box">Nina, right now your AI handles your personal line great. Imagine that same quality across all your locations &mdash; where any caller gets accurate answers from AI that knows your systems, and urgent calls get transferred to the nearest available person.</div>
+    </div>
   </div>
 </div>
 
-<!-- Eleonora Key Plays -->
-<div class="page">
-  <h2>Eleonora &mdash; Key Plays</h2>
-
-  <div class="play-card">
-    <h4>1. Alexander Shunnarah &mdash; ASTA Enterprise</h4>
-    <p>PI law at $5&ndash;20K/case. 6 true rev-stakes in one week. Plus <strong>Mitri Shatara</strong> (Attorney &amp; EVP, same firm) in HubSpot. Highest $ opportunity in the entire portfolio. <strong>Pitch</strong>: "Your firm got 6 potential PI cases this week. With caller scenarios, your AI could qualify leads and route urgent cases immediately. Let's also talk about getting Mitri's team on board."</p>
-  </div>
-
-  <div class="play-card">
-    <h4>2. Three Users with ~48hr Delays</h4>
-    <p><strong>Guttormson</strong> (48.9hr, Fluid Solutions), <strong>Henry</strong> (48.8hr, Innovative Control), <strong>Horsefield</strong> (42.9hr, Bish's RV). Most dramatic data points. "Business-critical calls are waiting 2 days before anyone sees them. With transfer + inbox sharing, a team member could handle these live."</p>
-  </div>
-
-  <div class="play-card">
-    <h4>3. Pete Dunn's Verizon/Darden Deal</h4>
-    <p>CradlePoint pricing expiring in April. Most <strong>time-sensitive</strong> outreach in the portfolio. A missed follow-up could cost the deal. "Our system flagged a call about a deal with an expiring deadline &mdash; we want to make sure your AI handles those with maximum urgency."</p>
-  </div>
-
-  <div class="play-card">
-    <h4>4. Darren Holliman &mdash; VIP Frustration Quick Win</h4>
-    <p>Rachael called 3x saying "stop answering his phone." <strong>Instant free fix</strong>: add Rachael as VIP with direct transfer. Demonstrates value of VIP feature + opens conversation about upgrade. "We noticed a contact who was frustrated with the AI. Let's fix that right now for free."</p>
-  </div>
-
-  <div class="play-card">
-    <h4>5. Drew Horsefield &mdash; Free-to-Paid Conversion</h4>
-    <p>Dir. of Fixed Operations at Bish's RV (400 emp). <strong>224 lifetime calls on free</strong>. 42.9hr delays on urgent calls including a hiring decision that could lose a candidate. "You've handled 224 calls with us. With Pro, you'd get transfer so urgent hiring and customer calls go straight to the right person."</p>
+<div class="page page-white">
+  <h2>Deep Dive: Bobby Beeman</h2>
+  <p class="section-sub">All Access Services &mdash; Team Plan</p>
+  <div class="dive-card">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px; padding-bottom:20px; border-bottom:1px solid #E8E4E0;">
+      <div>
+        <div class="diag-label" style="margin-bottom:6px;">Account Potential</div>
+        <h3 style="margin:0;">All Access Services</h3>
+        <div class="dive-meta">100 employees</div>
+      </div>
+      <div>
+        <div class="diag-label" style="margin-bottom:6px;">User Overview</div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div class="dive-avatar" style="background:#C75B39;">BB</div>
+          <div>
+            <div style="font-weight:600;">Bobby Beeman, Outside Sales Representative</div>
+            <div class="dive-meta">Team plan &middot; AI "AI" &middot; 7 calls/cycle &middot; 76% cvo &middot; 22 VIPs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="step-row step-free">
+      <div class="step-title">Free Fixes</div>
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check">&#10003;</td><td>VIP contacts: 22 tagged (threshold: 2+)</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#E65100;">&#9888;</td><td>Cvo rate: 76%, greeting is 24 words &mdash; could trim</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Caller scenarios: none defined &mdash; all caller types get generic handling</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check">&#10003;</td><td>FAQ: 9,638 chars</td><td class="val">&mdash;</td></tr>
+      </table>
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Let's fix your scenarios so your AI can handle different caller types. E.g. add caller scenario: "If caller asks about equipment" &rarr; "Ask what type, size, when needed, delivery or pickup."</div>
+      <div class="comms-label">Example outreach</div>
+      <div class="alert-box">Hey Bobby, our system flagged a call where your AI applied generic handling to a caller that likely needed a more specific approach. Do you have 15 minutes to hop on a call to correct this together?</div>
+    </div>
+    <div class="arrow-row">&darr;</div>
+    <div class="step-row step-solo">
+      <div class="step-title">Solo Upgrade</div>
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check">&#10003;</td><td>Call volume: 7/1,000 prev cycle (1%)</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check">&#10003;</td><td>Plan: Team &mdash; all features available</td><td class="val">&mdash;</td></tr>
+      </table>
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">your AI is on Team &mdash; solo features are covered.</div>
+      
+    </div>
+    <div class="arrow-row">&darr;</div>
+    <div class="step-row step-branch">
+      <div class="step-title">Branch Upgrade &mdash; All Access Services</div>
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check">&#10003;</td><td>Call transfer: configured</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check">&#10003;</td><td>Dedicated phone number: configured</td><td class="val">&mdash;</td></tr>
+      </table>
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Let's get your All Access Services branch on YouSquared so every equipment inquiry to your branch line or your reps' direct lines is serviced instantly 24/7 by AI, and whenever necessary transferred to the right person.</div>
+      <div class="comms-label">Example outreach</div>
+      <div class="alert-box">Hey Bobby, with your branch line and reps on YouSquared, every equipment inquiry would be handled live 24/7 and transferred to the right person when needed. Do you have 5 minutes to discuss?</div>
+    </div>
+    <div class="arrow-row">&darr;</div>
+    <div class="step-row step-enterprise">
+      <div class="step-title">Enterprise</div>
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Additional branches: research needed</td><td class="val" style="color:#6A1B9A;">TBD</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Main national line: not on YouSquared</td><td class="val" style="color:#6A1B9A;">TBD</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>System integration: 1 of 3,272 contacts enriched &mdash; AI can't look up answers</td><td class="val" style="color:#6A1B9A;">TBD</td></tr>
+      </table>
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Let's scale this across all of All Access Services's locations + main line on our AI integrated with your systems.</div>
+      <div class="comms-label">Example pitch</div>
+      <div class="alert-box">Bobby, right now your AI handles your personal line great. Imagine that same quality across all your locations &mdash; where any caller gets accurate answers from AI that knows your systems, and urgent calls get transferred to the nearest available person.</div>
+    </div>
   </div>
 </div>
 
-<!-- ========== ENGAGEMENT APPROACH ========== -->
-<div class="page page-warm page-break">
-  <h2>Engagement Approach Templates</h2>
-  <p style="color:var(--text-secondary); margin-bottom:24px;">Privacy-safe outreach. Never mention caller name, phone, or topic. Reference timestamp only. "Our system flagged" framing. Max 1 alert/week per user.</p>
-
-  <div class="approach-grid">
-    <div class="approach-card">
-      <h4 style="color:#C62828">Alert Type 1: Revenue-Stakes + No Transfer</h4>
-      <p>Trigger: revenue-stakes call + no transfer configured + &gt;1hr time-to-read.</p>
-      <div class="template">
-        <strong>Tier 1 (avg &gt;24hr):</strong> "Urgent: [Company] &mdash; [X] flagged calls unreviewed. Our system shows an average [Y]-hour gap between when important calls come in and when they're seen. With call transfer, the right person on your team could've handled these live."
+<div class="page page-white">
+  <h2>Deep Dive: Enrique Ochoa</h2>
+  <p class="section-sub">All Access Services &mdash; Pro Plan</p>
+  <div class="dive-card">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px; padding-bottom:20px; border-bottom:1px solid #E8E4E0;">
+      <div>
+        <div class="diag-label" style="margin-bottom:6px;">Account Potential</div>
+        <h3 style="margin:0;">All Access Services</h3>
+        <div class="dive-meta">150 employees</div>
       </div>
-      <div class="template" style="margin-top:8px">
-        <strong>Tier 2 (1&ndash;24hr):</strong> "We can see you're catching up same-day, but with transfer configured, time-sensitive calls from [caller type] could reach a team member instantly."
-      </div>
-    </div>
-
-    <div class="approach-card">
-      <h4 style="color:#F57F17">Alert Type 2: VIP Frustration / Missing Scenario</h4>
-      <p>Trigger: caller frustrated with AI, or got generic handling when a scenario should exist.</p>
-      <div class="template">
-        "Our system flagged a call on [day] at [time] where [AI name] applied generic handling to a caller that likely needed a more specific approach. Let's set up a caller scenario so this doesn't happen again &mdash; it's a free fix."
+      <div>
+        <div class="diag-label" style="margin-bottom:6px;">User Overview</div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div class="dive-avatar" style="background:#2E7D32;">EO</div>
+          <div>
+            <div style="font-weight:600;">Enrique Ochoa, Account manager</div>
+            <div class="dive-meta">Pro plan &middot; AI "Thomas" &middot; 5 calls/cycle &middot; 59% cvo &middot; 35 VIPs</div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="approach-card">
-      <h4 style="color:#E65100">Volume Limit Pitch</h4>
-      <p>Trigger: user at &gt;80% of cycle limit.</p>
-      <div class="template">
-        "You've handled [X] calls with YouSquared &mdash; you're one of our most active users. You've hit your [limit]-call limit this cycle. With [plan], you'd get [Y] calls + [feature]."
-      </div>
+    <div class="step-row step-free">
+      <div class="step-title">Free Fixes</div>
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check">&#10003;</td><td>VIP contacts: 35 tagged (threshold: 2+)</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#E65100;">&#9888;</td><td>Cvo rate: 59%, greeting is 19 words &mdash; could trim</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Caller scenarios: none defined &mdash; all caller types get generic handling</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check">&#10003;</td><td>FAQ: 16,162 chars</td><td class="val">&mdash;</td></tr>
+      </table>
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Let's fix your scenarios so Thomas can handle different caller types. E.g. add caller scenario: "If caller asks about equipment" &rarr; "Ask what type, size, when needed, delivery or pickup."</div>
+      <div class="comms-label">Example outreach</div>
+      <div class="alert-box">Hey Enrique, our system flagged a call where Thomas applied generic handling to a caller that likely needed a more specific approach. Do you have 15 minutes to hop on a call to correct this together?</div>
     </div>
-
-    <div class="approach-card">
-      <h4 style="color:#2E7D32">Branch Upgrade (for All Access, ASTA, etc.)</h4>
-      <p>Trigger: multiple ICs at same company already on platform.</p>
-      <div class="template">
-        "5 of your team members are already using YouSquared. Let's get [branch name] on a Team plan so every [equipment request / PI intake] to your branch line or your reps' direct lines is serviced instantly 24/7 &mdash; and transferred to the right person when needed."
-      </div>
+    <div class="arrow-row">&darr;</div>
+    <div class="step-row step-solo">
+      <div class="step-title">Solo Upgrade</div>
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check">&#10003;</td><td>Call volume: 5/90 prev cycle (6%)</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check">&#10003;</td><td>Plan: Pro</td><td class="val">&mdash;</td></tr>
+      </table>
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Thomas is on Pro &mdash; solo features are covered.</div>
+      
     </div>
-  </div>
-
-  <div class="callout">
-    <div class="label">Cadence Rules</div>
-    <ul style="font-size:0.88em; color:var(--text-secondary); padding-left:16px; margin-top:4px;">
-      <li>Max 1 alert/week per user. Type 1 priority over Type 2.</li>
-      <li>Weekly digest if 3+ occurrences in a week.</li>
-      <li>Pause after 3 consecutive no-responses.</li>
-      <li>Skip if: transfer already configured, &lt;1hr read time + scenarios exist, already on Team plan for that feature.</li>
-      <li>$ values are AE internal only. Never quote to user.</li>
-    </ul>
+    <div class="arrow-row">&darr;</div>
+    <div class="step-row step-branch">
+      <div class="step-title">Branch Upgrade &mdash; All Access Services</div>
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check">&#10003;</td><td>Call transfer: configured</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Avg time-to-read on revenue-stakes calls: 53 hours</td><td class="val">&mdash;</td></tr>
+        <tr><td class="check">&#10003;</td><td>Dedicated phone number: configured</td><td class="val">&mdash;</td></tr>
+      </table>
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Let's get your All Access Services branch on YouSquared so every equipment inquiry to your branch line or your reps' direct lines is serviced instantly 24/7 by AI, and whenever necessary transferred to the right person.</div>
+      <div class="comms-label">Example outreach</div>
+      <div class="alert-box">Hey Enrique, our system flagged a call with potential revenue at stake &mdash; it took about 53 hours before it was reviewed. With your branch line and reps on YouSquared, a team member could've picked that up live. Do you have 5 minutes to discuss?</div>
+    </div>
+    <div class="arrow-row">&darr;</div>
+    <div class="step-row step-enterprise">
+      <div class="step-title">Enterprise</div>
+      <div class="diag-label">Diagnosis</div>
+      <table class="diag-table">
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Additional branches: research needed</td><td class="val" style="color:#6A1B9A;">TBD</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>Main national line: not on YouSquared</td><td class="val" style="color:#6A1B9A;">TBD</td></tr>
+        <tr><td class="check" style="color:#C62828;">&#10007;</td><td>System integration: 19 of 1,720 contacts enriched &mdash; AI can't look up answers</td><td class="val" style="color:#6A1B9A;">TBD</td></tr>
+      </table>
+      <div class="approach-label">Approach</div>
+      <div class="approach-text">Let's scale this across all of All Access Services's locations + main line on our AI integrated with your systems.</div>
+      <div class="comms-label">Example pitch</div>
+      <div class="alert-box">Enrique, right now Thomas handles your personal line great. Imagine that same quality across all your locations &mdash; where any caller gets accurate answers from AI that knows your systems, and urgent calls get transferred to the nearest available person.</div>
+    </div>
   </div>
 </div>
 
-<!-- PRINCIPLES -->
-<div class="page" style="padding-bottom:80px">
+<div class="page page-warm">
   <h2>Principles</h2>
   <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px;">
-    <div style="background:var(--warm-gray); border-radius:12px; padding:20px; text-align:center;">
+    <div style="background:white; border-radius:12px; padding:20px; text-align:center;">
       <div style="font-size:1.8em; margin-bottom:8px;">&#9201;</div>
-      <h4>Event-Triggered</h4>
-      <p style="font-size:0.85em; color:var(--text-secondary);">Outreach is triggered by real-time pain, not scheduled cadences.</p>
+      <h3 style="font-size:1em;">Event-Triggered</h3>
+      <p style="font-size:0.85em; color:#6B6560;">Outreach is triggered by real-time pain, not scheduled cadences.</p>
     </div>
-    <div style="background:var(--warm-gray); border-radius:12px; padding:20px; text-align:center;">
+    <div style="background:white; border-radius:12px; padding:20px; text-align:center;">
       <div style="font-size:1.8em; margin-bottom:8px;">&#128274;</div>
-      <h4>Privacy-Safe</h4>
-      <p style="font-size:0.85em; color:var(--text-secondary);">Never mention caller name, phone, or topic. "Our system flagged" framing.</p>
+      <h3 style="font-size:1em;">Privacy-Safe</h3>
+      <p style="font-size:0.85em; color:#6B6560;">Never mention caller name, phone, or topic. &quot;Our system flagged&quot; framing.</p>
     </div>
-    <div style="background:var(--warm-gray); border-radius:12px; padding:20px; text-align:center;">
+    <div style="background:white; border-radius:12px; padding:20px; text-align:center;">
       <div style="font-size:1.8em; margin-bottom:8px;">&#127873;</div>
-      <h4>Free First</h4>
-      <p style="font-size:0.85em; color:var(--text-secondary);">Always lead with free fixes (scenarios, VIPs, greeting). Paid upgrades come second.</p>
+      <h3 style="font-size:1em;">Free First</h3>
+      <p style="font-size:0.85em; color:#6B6560;">Always lead with free fixes. Paid upgrades come second.</p>
     </div>
-    <div style="background:var(--warm-gray); border-radius:12px; padding:20px; text-align:center;">
+    <div style="background:white; border-radius:12px; padding:20px; text-align:center;">
       <div style="font-size:1.8em; margin-bottom:8px;">&#128197;</div>
-      <h4>Max 1x/Week</h4>
-      <p style="font-size:0.85em; color:var(--text-secondary);">Respect the user's attention. One alert per week, pause after 3 no-responses.</p>
+      <h3 style="font-size:1em;">Max 1x/Week</h3>
+      <p style="font-size:0.85em; color:#6B6560;">One alert per week. Pause after 3 no-responses.</p>
     </div>
-  </div>
-
-  <div style="text-align:center; margin-top:48px; color:var(--text-tertiary); font-size:0.85em;">
-    Generated April 12, 2026 &middot; Retrospective window: April 1&ndash;7, 2026<br>
-    YouSquared Proactive White Glove Support
   </div>
 </div>
 
